@@ -2,7 +2,7 @@ $\newcommand{\bra}[1]{\left\langle #1 \right|}$
 $\newcommand{\ket}[1]{\left| #1 \right\rangle}$
 $\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}$
 
-# Estrutura matemática da Mecânica Quântica
+# Estrutura matemática da MQ - parte 1
 
 Neste capitulo, é apresentada a estrutura matemática da teoria quântica. A prioridade maior é com relação à Física e não o rigor matemático, mas, ainda assim, serão introduzidos novos conceitos e representações que serão muito úteis para expandir os horizontes da teoria, como veremos nos próximos capítulos, isso será fundamentais para entender a linguagem contemporânea da descrição de sistemas de múltiplas partículas.
 
@@ -322,6 +322,467 @@ $$ | \phi\rangle = 3 |u_1 \rangle - 2|u_2 \rangle + 4|u_3 \rangle $$
 >
 > e) Calcule $\langle a \psi|$ e compare com $a^* \langle \psi|$.
 >
+> f) Normalize o vetor  $| \psi \rangle$.
+>
 > -----
 > 
 ```
+
+
+**Encontrando os coeficientes da expansão**
+
+Da mesma forma que fazemos os vetores do espaço Euclidiano, para encontrar as componentes de um vetor no espaço de Hilbert basta fazer o produto escalar (interno) do vetor com o correspondente verto da base. Em notação de Dirac, se o vetor é dado por 
+$$
+|\psi\rangle=c_{1}\left|u_{1}\right\rangle+c_{2}\left|u_{2}\right\rangle+\cdots+c_{n}\left|u_{n}\right\rangle=\sum_{i=1}^{n} c_{i}\left|u_{i}\right\rangle
+$$  
+os coeficientes são dados por
+$$
+c_i = \left\langle\ u_i | \psi \right\rangle
+$$
+que podem ser convenientemente escritos na forma
+
+$$
+| \psi \rangle \rightarrow\left( \begin{array}{c} \left\langle u_{1} | \psi\right\rangle \\ \left\langle u_{2} | \psi\right\rangle \\ \vdots \\ \left\langle u_{n} | \psi\right\rangle \end{array} \right) = 
+\left(\begin{array}{c} c_{1} \\ c_{2} \\ \vdots \\ c_{n} \end{array}\right)
+$$
+
+Note, porém, que um vetor pode ser escrito em termos de diversas bases diferentes (o vetor tem existência independentemente da base) e em cada uma delas os valores das componentes serão diferentes.
+
+```{note} 
+**Exemplo**
+
+Considere o vetor abaixo, expresso em termos de uma base ortonormal:
+
+$$ |\psi\rangle=2 i\left|u_{1}\right\rangle-3\left|u_{2}\right\rangle+i\left|u_{3}\right\rangle$$
+```
+
+Neste caso, o vetor coluna dos coeficientes representando $|\psi\rangle$ é dado por
+    
+$$
+|\psi\rangle = 
+\left( \begin{array}{c} \left\langle u_{1} | \psi\right\rangle \\ \left\langle u_{2} | \psi\right\rangle \\ \left\langle u_{3} |\psi\right\rangle \end{array}\right) = 
+\left( \begin{array}{c} 2 i \\ -3 \\ i \end{array} \right).
+$$
+
+Da mesma forma, o vetor dual ("_bra_") correspondente ao vetor $|\psi\rangle$ pode ser representado na forma de um vetor linha
+
+$$
+\left\langle\psi\left|=\left(\left\langle\psi | u_{1}\right\rangle\left\langle\psi | u_{2}\right\rangle\left\langle\psi | u_{3}\right\rangle\right)=\left(\left\langle u_{1} | \psi\right\rangle^{*}\left\langle u_{2} | \psi\right\rangle^{*}\left\langle u_{3} | \psi\right\rangle^{*}\right)\right.\right.
+$$
+
+e portanto
+
+$$
+\langle\psi|=\left((2 i)^{*}(-3)^{*}(i)^{*}\right)=(-2 i-3-i).
+$$
+
+## Operadores lineares
+
+Grandezas físicas observáveis, que podem ser medidas no laboratório, como posição e momento, são representados dentro da estrutura matemática da mecânica quântica por operadores lineares num espaço vetorial de Hilbert. Matematicamente, esses operadores são mapas que levam (transformam) um vetor em outro vetor. Isto é, são receitas ou regras de transformação de um dado vetor num novo vetor, geralmente diferente do primeiro. Frequentemente usa-se como símbolo uma letra maiúscula com "chapel" (sinal circunflexo) sobre a letra para indicar um operador. Assim, na notação de Dirac, escreve-se, por exemplo:
+$$
+\hat{T}|\psi\rangle=|\phi \rangle.
+$$
+
+Os operadores que mais nos interessam na MQ são os operadores lineares. Um operador $\hat{T}:\mathcal{H}\rightarrow\mathcal{H}$ é linear no espaço $\mathcal{H}$ se, dados escalares $\alpha, \beta \in \mathbb{C}$ e vetores $|u\rangle, |v\rangle \in \mathcal{H}$, ele satisfaz a relação:
+$$
+\hat{T}(\alpha|u\rangle+\beta|v\rangle)=\alpha\, \hat{T}|u\rangle+\beta\, \hat{T}|v\rangle.
+$$ 
+
+Além disso, os operadores lineares também satisfazem as seguintes relações:
+
+$$
+(\hat{T}+\hat{S})\ket{u}=\hat{T}\ket{u} + \hat{S}\ket{u}
+$$
+
+$$ 
+(\hat{T}\,\hat{S})\ket{u}=\hat{T}(\hat{S}\ket{u})
+$$
+
+Operadores atuam tanto nos vetores _kets_ como nos vetores duais _bras_, seguindo a seguinte notação (atenção para a ordem!):
+$$ 
+\hat{T}\ket{u} \quad \text{ ou } \quad \bra{u} \hat{T}
+$$
+mas nunca $(\,\ket{u} \hat{T}\,)$ ou $(\,\hat{T} \bra{u}\,)$, que são formas incorretas (inválidas)!
+
+### Exemplos importantes
+
+- **Operador Identidade:** o operador mais simples
+$$
+\mathbf{\hat{1}}\ket{u}=\ket{u}
+$$
+
+- **Produto externo (definição):** o produto externo entre _kets_ e _bras_ é dado por
+$$
+\ket{\psi}\bra{\phi} = \hat{P}
+$$
+note que o produto externo resulta num operador e não num escalar! Essa construção será muito útil, como veremos adiante.
+
+- **Operador projetor:** usando o produto externo, podemos calcular as projeções de um dado vetor numa certa direção $\ket{u_i}$, ou numa base $\{ u_i \}$, fazendo 
+
+$$
+\begin{array}{ll}
+\hat{P}_{u_i} = | u_i \rangle \langle u_i |  &\rightarrow \quad \hat{P}_{u_i} | \chi\rangle = | u_i \rangle (\langle u_i |\chi\rangle) = \beta | u_i \rangle \\
+\hat{P}_{u} = \sum_i | u_i \rangle \langle u_i |  &\rightarrow \quad  {P}_{u} | \chi\rangle = \sum_i \,c_i | u_i \rangle = | \chi\rangle
+\end{array}
+$$
+
+- **Relação de completeza:** usando os resultados anteriores podemos observar que
+
+$$
+|\psi\rangle=\sum_{i=1}^{n}c_i\left|u_{i}\right\rangle = \sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i} | \psi\right\rangle=\left(\sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i}\right|\right)|\psi\rangle
+$$
+
+$$
+\sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i}\right| = \mathbf{\hat{1}}
+$$
+
+
+### Representação de operadores
+
+A operação matemática de transformar um vetor de um espaço vetorial linear num outro vetor, através da ação de um operador linear, pode ser representada de várias formas. Uma delas é a representação matricial, onde os operadores são representados por matrizes quadradas e os vetores por matrizes linhas e colunas. Neste caso, a transformação linear torna-se uma mera multiplicação dessas matrizes.
+
+É importante lembrar que, da mesma forma que os vetores do espaço, os operadores têm existência e significado próprios no espaço vetorial e sua ação independe da representação ou da base escolhida. Por outro lado, sua representação matricial, em geral, depende da base escolhida. Devemos lembrar, porém, que a forma matricial é apenas uma das representações possíveis de um operador linear. 
+
+**Representação matricial**
+
+A matriz de um operador numa dada base pode ser obtida a partir da ação do operador em cada vetor da base. Assim, se $\{ u_i \}$ representa o conjunto de vetores da base, as componentes do operador $\hat{T}$ podem ser obtidas através da operação
+
+$$
+T_{i j}=\left\langle u_{i}|\hat{T}| u_{j}\right\rangle.
+$$
+
+Em um espaço vetorial de dimensão n, as componentes do operador podem ser arranjadas na forma de uma matriz quadrada $n \times n$, onde $T_{i j}$ representa o elemento na linha $i$ e coluna $j$, conforme:
+
+$$
+\begin{aligned}
+\hat{T} \rightarrow\left(T_{i j}\right) &=\left(\begin{array}{cccc}
+T_{11} & T_{12} & \dots & T_{1 n} \\
+T_{21} & T_{22} & \dots & T_{2 n} \\
+\vdots & \vdots & \ddots & \vdots \\
+T_{n 1} & T_{n 2} & \dots & T_{n n}
+\end{array}\right) \\
+&=\left(\begin{array}{cccc}
+\left\langle u_{1}|\hat{T}| u_{1}\right\rangle & \left\langle u_{1}|\hat{T}| u_{2}\right\rangle & \dots & \left\langle u_{1}|\hat{T}| u_{n}\right\rangle \\
+\left\langle u_{2} \hat{T} | u_{1}\right\rangle & \left\langle u_{2}|\hat{T}| u_{2}\right\rangle & \dots & \left\langle u_{2}|\hat{T}| u_{n}\right\rangle \\
+\vdots & \vdots & \ddots & \vdots \\
+\left\langle u_{n}|\hat{T}| u_{1}\right\rangle & \left\langle u_{n}|\hat{T}| u_{2}\right\rangle & \dots & \left\langle u_{n}|\hat{T}| u_{n}\right\rangle
+\end{array}\right)
+\end{aligned}
+$$
+
+```{note}  
+**Exercício sugerido**
+
+Suponha uma base ortonormal $\left\{\left|u_{1}\right\rangle,\left|u_{2}\right\rangle,\left|u_{3}\right\rangle\right\}$, um operador $\hat{A}$ cuja a ação é dada por:
+
+$$
+\begin{array}{l}
+\hat{A}\left|u_{1}\right\rangle=2\left|u_{1}\right\rangle; \\
+\hat{A}\left|u_{2}\right\rangle=3\left|u_{1}\right\rangle-i\left|u_{3}\right\rangle; \\
+\hat{A}\left|u_{3}\right\rangle=-\left|u_{2}\right\rangle
+\end{array}
+$$
+
+Escreve a matriz que representa o operador nesta base.
+```
+
+
+**_Definição_ : Traço de um operador**
+
+O traço de um operador $\hat{T}$, denotado por $\text{Tr}(\hat{T})$, é definido como sendo a soma dos elementos na diagonal principal da matriz que o representa 
+
+$$
+\text{Tr}(\hat{T})=T_{11}+T_{22}+\ldots+T_{n n}=\sum_{i=1}^{n} T_{i i}.
+$$ 
+
+Alternativamente, o traço também pode ser escrito como:
+
+$$
+\text{Tr}(\hat{T})=\left\langle u_{1}|\hat{T}| u_{2}\right\rangle+\left\langle u_{2}|\hat{T}| u_{2}\right\rangle+\ldots+\left\langle u_{n}|\hat{T}| u_{n}\right\rangle=\sum_{i=1}^{n}\left\langle u_{i}|\hat{T}| u_{i}\right\rangle
+$$
+
+!!! question "Exercício sugerido"
+    O traço de um operador obedece uma relação cíclica, como indicado
+    $$
+    \operatorname{Tr}(A B C)=\operatorname{Tr}(B C A)=\operatorname{Tr}(C A B)
+    $$
+    Prove isso para o caso de dois operadores $A$ e $B$, i.e. prove que $\operatorname{Tr}(A B)=\operatorname{Tr}(B A)$
+
+### Valores esperados
+
+O valore esperado de um operador com relação a um estado $\Psi$ é dado por
+
+$$
+\langle\hat{A}\rangle=\langle\Psi|\hat{A}| \Psi\rangle
+$$
+
+!!! question "Exercício sugerido"
+    Considere uma partícula no estado
+    $$
+    |\Psi\rangle=2 i\left|u_{1}\right\rangle-\left|u_{2}\right\rangle+4 i\left|u_{3}\right\rangle
+    $$
+    e um operador
+    $$
+    \hat{A}=\left|u_{1}\right\rangle\left\langle u_{1}| -2 i| u_{1}\right\rangle\left\langle u_{2}|+| u_{3}\right\rangle\left\langle u_{3}\right|
+    $$
+    Considerando que $\{ |u_i\rangle \}$ é uma base ortonormal, calcule $\langle \hat{A} \rangle$ nesse estado.
+
+
+### Autovalores e autovetores
+
+Quando um operador age sobre um dado vetor (estado) e o resultado é o mesmo vetor (estado) multiplicado por um escalar, o vetor é chamado de autovetor (autoestado) e o escalar de autovalor. Assim, por exemplo, no caso da energia total
+$$
+\hat{H}|\psi_n\rangle = E_n |\psi_n \rangle
+$$
+
+
+No contexto da mecânica quântica, operadores de observáveis físicos têm como autovalores o conjunto de todas as possíveis medidas daquela grandeza física, num dado sistema quântico. Os autovetores de um operador são autoestados do sistema quântico e são muito importantes, pois esses autovetores formam uma base do espaço e permitem representar qualquer estado do sistema. A seguir temos uma breve revisão de como calcular autovalores e autovetores, a partir de conceitos e métodos de Algebra Linear.
+
+**Cálculo dos autovalores**
+
+Dado um operador linear $\hat{T}$, como já vimos, pode-se sempre representá-lo por uma matriz $T$. O conjunto de autovalores $\lambda$ dessa matriz podem ser determinados através da _equação característica_ (também chamada de _equação secular_), para o determinante abaixo:
+$$
+\operatorname{det}(T-\lambda I)=0$$
+onde $I=(\mathbf{\hat{1}})$ é a matriz identidade. A solução da equação característica fornece os autovalores $\lambda$, que são as raízes do _polinômio_ (_característico_), indicado acima.
+
+!!! question "Exercício sugerido"
+    Escreva o equação característica e ache os autovalores da matriz
+
+    $$
+    A = 
+    \begin{pmatrix}
+    7i & -1 \\ 
+    2 & -6i
+    \end{pmatrix} 
+    $$
+
+**Cálculo dos autovetores**
+
+A partir dos autovalores pode-se determinar os autovetores da matriz $T$, que pode ser então escrita na forma diagonal. Para ilustrar melhor isso, usaremos um exemplo, a partir do problema proposto a seguir.
+
+!!! question "Exercício sugerido"
+    Considere o operador $\hat{T}=\ket{\phi_1}\bra{\phi_1}+2\ket{\phi_1}\bra{\phi_2}+\ket{\phi_2}\bra{\phi_1}$, expresso numa base ortonormal. Ache a matriz $T$, que representa o operador nesta base, e determine os autovetores normalizados do operador, com seus autovalores. Considere que o espaço é bidimensional.
+
+Antes de seguir, você deve resolver o problema proposto acima, em detalhe, pelo menos até onde puder, para ter certeza de que está entendo todos os passos necessários à resolução do problema. Ao fazer isso irá encontrar os valores que usaremos na resolução que exemplificada o cálculo de um dos autovetores, a seguir
+
+!!! example "Exemplo: resolução dos autovetores"              
+    Os autovalores do problema anterior são $\lambda_1=2$ e $\lambda_2=-1$. 
+
+    Substitui-se, então, esses valores, um de cada vez, na equação de autovalores $\hat{T}\ket{u_i}=\lambda_i \ket{u_i}$ para determinar os autovetores $\{ \ket{u_1},\ket{u_2} \}$, como é mostrado abaixo para $\ket{u_2}$.
+
+    $$
+    \begin{pmatrix}
+    1 & 2 \\ 
+    1 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+    a \\ 
+    b
+    \end{pmatrix} = -
+    \begin{pmatrix}
+    a \\
+    b
+    \end{pmatrix}
+    $$
+
+    $$
+    \Rightarrow a + 2b = -a, \text{ ou } b = -a.
+    $$
+
+    portanto,
+
+    $$
+    \ket{u_2}= 
+    \begin{pmatrix}
+    a \\
+    -a
+    \end{pmatrix}.
+    $$
+
+    Normalizando o vetor temos:
+
+    $$
+    \bra{u_2} u_2 \rangle = 1 \rightarrow 2a^2 = 1 \Rightarrow a=\frac{1}{\sqrt{2}},
+    $$
+
+    portanto, finalmente, temos:
+
+    $$
+    \ket{u_2} = 
+    \frac{1}{\sqrt{2}}
+    \begin{pmatrix}
+    1 \\
+    -1
+    \end{pmatrix}.
+    $$
+
+    Verifique agora que 
+    
+    $$ 
+    \ket{u_1} = \frac{1}{\sqrt{5}} 
+    \begin{pmatrix} 
+    2 \\ 
+    1 
+    \end{pmatrix}.
+    $$
+
+
+
+### Conjugação Hermitiana
+
+Até agora vimos que um operador age num _ket_ para produzir um novo _ket_, de acordo com $\hat{T} \ket{u} = \ket{v}.$ Vejamos agora, mais atentamente, sua ação dentro de um produto interno $\bra{w}v\rangle = \braket{w}{\hat{T}}{u}$. Sabemos que isso resulta num escalar (número) complexo. 
+
+Podemos tomar complexo conjugado desse número, usando a relação $\bra{w}v\rangle = \bra{v}w\rangle^*$. Observe atentamente o que ocorre com o operador
+
+$$
+\braket{w}{\hat{T}}{v} = \braket{v}{\hat{T}}{w}^* =\braket{w}{\hat{T^{\dagger}}}{v}
+$$
+
+onde $\hat{T^{\dagger}}$ (pronuncia-se "T _dagger_") é chamado de conjugado Hermitiano, ou Hermitiano conjugado, ou ainda **adjunto** do operador $\hat{T}$. 
+
+!!! note "**Como formar o Adjunto de uma expressão geral?**"
+    1. Substitua qualquer constante por seu complexo conjugado.
+    2. Substitua _kets_ pelos _bras_ associados, e vice-versa.
+    3. Substitua cada operador por seu Adjunto.
+    4. Inverta a ordem de todos os fatores na expressão.
+
+
+**O conjugado Hermitiano de uma matriz**
+
+Já sabemos como encontrar a matriz $M$ de um operador $\hat{M}$ qualquer. Para encontrar a matriz do Adjunto desse, simbolizada por $M^{\dagger}$, basta seguir os seguintes passos:
+
+!!! note "**Matriz Adjunta**"
+    1. Calcule a matriz transposta $M^T$, trocando as linhas pelas colunas.
+    2. Tome o complexo conjugado de cada elemento de $M^T.$
+
+De forma resumida:
+
+$$
+M^{\dagger}= \left( M^T \right)^*.
+$$
+
+**Propriedade da operação de transposição**
+
+!!! note ""
+    1. $(A+B)^T = A^T + B^T.$
+    2. $(A^T)^T = A.$
+    3. $(aA)^T= a A^T.$
+    4. $(AB)^T = B^T A^T.$
+ 
+### Operadores Hermitianos 
+
+Um operador é dito Hermitiano quando é auto-adjunto: $\hat{T}^{\dagger}=\hat{T}$. Isto é, quando o seu adjunto é ele próprio. Para um operador Hermitiano, temos que
+
+$$
+\braket{w}{\hat{T}}{v}=\braket{v}{\hat{T}}{w}^*
+$$
+
+Veremos que os operadores de observáveis físicos na mecânica quântica devem ser sempre operadores Hermitianos. Como esse operadores podem ser representado por matrizes, é interessante ver com determinar se uma matriz é Hermitiana.
+
+**Matriz Hermitiana**
+
+Uma matriz $M$ é Hermitiana se satisfaz:
+
+$$
+M = M^{\dagger}.
+$$
+
+Como vimos, $M^{\dagger}$ corresponde ao complexo conjugado da matriz transposta. Portanto, para satisfazer essa condição, os elementos da diagonal principal da matriz devem ser todos números reais (não complexos). Como consequência, o traço do operador (matriz) será, necessariamente um número real.
+
+**Autovalores de um operador Hermitiano**
+
+Pode-se demonstrar que operadores Hermitianos têm autovalores reais (_verifique!_). Por conta dessa propriedade, requer-se que todos os observáveis físicos na mecânica quântica, sejam representados por operadores Hermitianos. Portanto, tanto o traço como os autovalores de um operador Hermitiano são números reais. 
+
+**Autovetores de um operador Hermitiano**
+
+Outra propriedade importante dos operadores Hermitianos é que os autovetores correspondentes a autovalores diferentes são ortogonais. Também não é difícil demonstrar essa propriedade (_verifique!_), usando a propriedade anterior, que os autovalores são números reais. Como os autovetores são ortogonais, é possível construir uma base (ortonormal) que gere o espaço.
+
+!!! info "Propriedades de operadores Hermitianos"
+    1. Autovalores reais
+    2. Autovetores ortogonais, para autovalores diferentes
+    3. Autovetores geram o espaço (podem formar uma base)
+
+
+
+**Operador anti-Hermitiano**
+
+Um operador $\hat{A}$ é dito anti-Hermitiano se:
+
+$$
+A^{\dagger}=-A
+$$
+
+Verifique que, neste caso, os elementos da diagonal principal da matriz do operador anti-Hermitiano(a) são todos números imaginários puros.
+
+
+### Operadores Normais
+
+Um operador $A$ é dito ser _normal_ se ele comuta com seu adjunto:
+
+$$
+AA^{\dagger} = A^{\dagger}A.
+$$ 
+
+Claramente, um operador Hermitiano é também um operador normal. Operadores normais são importantes pois há um [teorema](https://en.wikipedia.org/wiki/Spectral_theorem) que garante que eles podem ser escritos na forma de _decomposição espectral_, que estudaremos adiante e será muito útil. Voltaremos a falar deles ao discutir o processo de diagonalização de um operador.
+
+
+### Operadores Unitários 
+
+Um operador $\hat{U}$ (de matriz $U$) é unitário se:
+
+$$
+UU^{\dagger} = U^{\dagger} U = \mathbf{\hat{1}}
+$$
+
+Isso significa que
+
+$$
+U^{\dagger} = U^{-1}
+$$
+
+ou seja, que a matriz adjunta é igual a matriz inversa.
+
+Outra importante característica das matrizes unitárias é que as linhas e colunas dessa matrizes formam um conjunto de vetores ortonormais. Pode-se perceber ainda que operadores unitários também são operadores normais e, portanto, podem tem uma decomposição spectral, como veremos depois. 
+
+Finalmente, outra característica importante desses operadores é que geometricamente eles preservam o produto interno entre vetores, com pode ser facilmente verificado
+
+$$
+( U\ket{v},U\ket{w}) = \bra{v}U^{\dagger}U\ket{w}=\braket{v}{\mathbf{\hat{1}}}{w}=\bra{v}w\rangle. 
+$$
+
+### Comutadores e anticomutadores
+
+Seja $\hat{A}$ e $\hat{B}$ dois operadores lineares do espaço. Em geral, temos que $\hat{A}\hat{B} \ne \hat{B}\hat{A}.$ Assim, define-se o comutador $[\hat{A},\hat{B}]$ como sendo
+
+$$
+[\hat{A},\hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}.
+$$
+
+Se $[\hat{A},\hat{B}]=0$, dizemos que os operadores comutam. Dois operadores comutam se, e apenas se, eles compartilham uma mesma base de autovetores comuns.
+
+**Propriedades do comutador**
+
+!!! note ""
+    1. $[A,B]=-[B,A]$
+    2. $[A+B,C]=[A,C]+[B,C]$
+    3. $[A,BC]=[A,B]C+B[A,C]$
+    4. Se $\hat{X}$ e $\hat{P}$ representam os operadores posição e momento linear, então $[\hat{X}$, $\hat{P}]=i\hbar$, enquanto $[\hat{X}$, $\hat{X}]= [\hat{P}$, $\hat{P}]=0.$ 
+
+**Anticomutador**
+
+Define-se o anticomutador $\{\hat{A},\hat{B}\}$ como sendo
+
+$$
+\{ \hat{A},\hat{B} \} = \hat{A}\hat{B} + \hat{B}\hat{A}.
+$$
+
+
+### Conjunto Completo de Observáveis que Comutam (CCOC) 
+
+Um conjunto de operadores $\hat{A}$, $\hat{B}$, $\hat{C}, \dots$ forma um CCCO se todos os subpares desses operadores comutam entre si.
+
+$$
+[\hat{A},\hat{B}] = [\hat{B},\hat{C}] = [\hat{A},\hat{C}] = \dots= 0
+$$
+
+Isso implica que existe uma base comum de autovetores que é única para todos eles, exceto por um fator multiplicativo.

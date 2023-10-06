@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Estrutura matemática da Mecânica Quântica &#8212; 7600042-2023 Book</title>
+    <title>Estrutura matemática da MQ - parte 1 &#8212; 7600042-2023 Book</title>
   
   
   
@@ -67,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Estrutura matemática da MQ - parte 2" href="RevMQ-p2.html" />
     <link rel="prev" title="7600042 - Tópicos Especiais em Mecânica Quântica (2023)" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -159,7 +160,9 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Estrutura matemática da Mecânica Quântica</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Estrutura matemática da MQ - parte 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RevMQ-p2.html">Estrutura matemática da MQ - parte 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RevMQ-p3.html">Fundamentos da Mecânica Quântica</a></li>
 </ul>
 
     </div>
@@ -343,7 +346,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Estrutura matemática da Mecânica Quântica</h1>
+    <h1>Estrutura matemática da MQ - parte 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -371,6 +374,19 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra-de-dirac">Algebra de Dirac</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-lineares">Operadores lineares</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-importantes">Exemplos importantes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representacao-de-operadores">Representação de operadores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-esperados">Valores esperados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autovalores-e-autovetores">Autovalores e autovetores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjugacao-hermitiana">Conjugação Hermitiana</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-hermitianos">Operadores Hermitianos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-normais">Operadores Normais</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-unitarios">Operadores Unitários</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comutadores-e-anticomutadores">Comutadores e anticomutadores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunto-completo-de-observaveis-que-comutam-ccoc">Conjunto Completo de Observáveis que Comutam (CCOC)</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -385,8 +401,8 @@ document.write(`
   <p><span class="math notranslate nohighlight">\(\newcommand{\bra}[1]{\left\langle #1 \right|}\)</span>
 <span class="math notranslate nohighlight">\(\newcommand{\ket}[1]{\left| #1 \right\rangle}\)</span>
 <span class="math notranslate nohighlight">\(\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}\)</span></p>
-<section class="tex2jax_ignore mathjax_ignore" id="estrutura-matematica-da-mecanica-quantica">
-<h1>Estrutura matemática da Mecânica Quântica<a class="headerlink" href="#estrutura-matematica-da-mecanica-quantica" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="estrutura-matematica-da-mq-parte-1">
+<h1>Estrutura matemática da MQ - parte 1<a class="headerlink" href="#estrutura-matematica-da-mq-parte-1" title="Permalink to this heading">#</a></h1>
 <p>Neste capitulo, é apresentada a estrutura matemática da teoria quântica. A prioridade maior é com relação à Física e não o rigor matemático, mas, ainda assim, serão introduzidos novos conceitos e representações que serão muito úteis para expandir os horizontes da teoria, como veremos nos próximos capítulos, isso será fundamentais para entender a linguagem contemporânea da descrição de sistemas de múltiplas partículas.</p>
 <section id="espaco-de-estados">
 <h2>Espaço de estados<a class="headerlink" href="#espaco-de-estados" title="Permalink to this heading">#</a></h2>
@@ -662,9 +678,397 @@ Para obter o <em>bra</em> correspondente a um dado <em>ket</em>, <span class="ma
 <p>c) Sendo <span class="math notranslate nohighlight">\(a = 3 + 3i\)</span>, calcule <span class="math notranslate nohighlight">\(|a\psi\rangle\)</span>.</p>
 <p>d) Ache as expressões de <span class="math notranslate nohighlight">\(|\psi+\phi\rangle\)</span> e  <span class="math notranslate nohighlight">\(|\psi-\phi\rangle\)</span></p>
 <p>e) Calcule <span class="math notranslate nohighlight">\(\langle a \psi|\)</span> e compare com <span class="math notranslate nohighlight">\(a^* \langle \psi|\)</span>.</p>
-<hr class="docutils" />
+<p>f) Normalize o vetor  <span class="math notranslate nohighlight">\(| \psi \rangle\)</span>.</p>
 </div></blockquote>
 </div>
+<hr class="docutils" />
+<p><strong>Encontrando os coeficientes da expansão</strong></p>
+<p>Da mesma forma que fazemos os vetores do espaço Euclidiano, para encontrar as componentes de um vetor no espaço de Hilbert basta fazer o produto escalar (interno) do vetor com o correspondente verto da base. Em notação de Dirac, se o vetor é dado por
+$<span class="math notranslate nohighlight">\(
+|\psi\rangle=c_{1}\left|u_{1}\right\rangle+c_{2}\left|u_{2}\right\rangle+\cdots+c_{n}\left|u_{n}\right\rangle=\sum_{i=1}^{n} c_{i}\left|u_{i}\right\rangle
+\)</span><span class="math notranslate nohighlight">\(  
+os coeficientes são dados por
+\)</span><span class="math notranslate nohighlight">\(
+c_i = \left\langle\ u_i | \psi \right\rangle
+\)</span>$
+que podem ser convenientemente escritos na forma</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+| \psi \rangle \rightarrow\left( \begin{array}{c} \left\langle u_{1} | \psi\right\rangle \\ \left\langle u_{2} | \psi\right\rangle \\ \vdots \\ \left\langle u_{n} | \psi\right\rangle \end{array} \right) = 
+\left(\begin{array}{c} c_{1} \\ c_{2} \\ \vdots \\ c_{n} \end{array}\right)
+\end{split}\]</div>
+<p>Note, porém, que um vetor pode ser escrito em termos de diversas bases diferentes (o vetor tem existência independentemente da base) e em cada uma delas os valores das componentes serão diferentes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Exemplo</strong></p>
+<p>Considere o vetor abaixo, expresso em termos de uma base ortonormal:</p>
+<div class="math notranslate nohighlight">
+\[ |\psi\rangle=2 i\left|u_{1}\right\rangle-3\left|u_{2}\right\rangle+i\left|u_{3}\right\rangle\]</div>
+</div>
+<p>Neste caso, o vetor coluna dos coeficientes representando <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> é dado por</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\psi\rangle = 
+\left( \begin{array}{c} \left\langle u_{1} | \psi\right\rangle \\ \left\langle u_{2} | \psi\right\rangle \\ \left\langle u_{3} |\psi\right\rangle \end{array}\right) = 
+\left( \begin{array}{c} 2 i \\ -3 \\ i \end{array} \right).
+\end{split}\]</div>
+<p>Da mesma forma, o vetor dual (”<em>bra</em>”) correspondente ao vetor <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> pode ser representado na forma de um vetor linha</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle\psi\left|=\left(\left\langle\psi | u_{1}\right\rangle\left\langle\psi | u_{2}\right\rangle\left\langle\psi | u_{3}\right\rangle\right)=\left(\left\langle u_{1} | \psi\right\rangle^{*}\left\langle u_{2} | \psi\right\rangle^{*}\left\langle u_{3} | \psi\right\rangle^{*}\right)\right.\right.
+\]</div>
+<p>e portanto</p>
+<div class="math notranslate nohighlight">
+\[
+\langle\psi|=\left((2 i)^{*}(-3)^{*}(i)^{*}\right)=(-2 i-3-i).
+\]</div>
+</section>
+</section>
+<section id="operadores-lineares">
+<h2>Operadores lineares<a class="headerlink" href="#operadores-lineares" title="Permalink to this heading">#</a></h2>
+<p>Grandezas físicas observáveis, que podem ser medidas no laboratório, como posição e momento, são representados dentro da estrutura matemática da mecânica quântica por operadores lineares num espaço vetorial de Hilbert. Matematicamente, esses operadores são mapas que levam (transformam) um vetor em outro vetor. Isto é, são receitas ou regras de transformação de um dado vetor num novo vetor, geralmente diferente do primeiro. Frequentemente usa-se como símbolo uma letra maiúscula com “chapel” (sinal circunflexo) sobre a letra para indicar um operador. Assim, na notação de Dirac, escreve-se, por exemplo:
+$<span class="math notranslate nohighlight">\(
+\hat{T}|\psi\rangle=|\phi \rangle.
+\)</span>$</p>
+<p>Os operadores que mais nos interessam na MQ são os operadores lineares. Um operador <span class="math notranslate nohighlight">\(\hat{T}:\mathcal{H}\rightarrow\mathcal{H}\)</span> é linear no espaço <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> se, dados escalares <span class="math notranslate nohighlight">\(\alpha, \beta \in \mathbb{C}\)</span> e vetores <span class="math notranslate nohighlight">\(|u\rangle, |v\rangle \in \mathcal{H}\)</span>, ele satisfaz a relação:
+$<span class="math notranslate nohighlight">\(
+\hat{T}(\alpha|u\rangle+\beta|v\rangle)=\alpha\, \hat{T}|u\rangle+\beta\, \hat{T}|v\rangle.
+\)</span>$</p>
+<p>Além disso, os operadores lineares também satisfazem as seguintes relações:</p>
+<div class="math notranslate nohighlight">
+\[
+(\hat{T}+\hat{S})\ket{u}=\hat{T}\ket{u} + \hat{S}\ket{u}
+\]</div>
+<div class="math notranslate nohighlight">
+\[ 
+(\hat{T}\,\hat{S})\ket{u}=\hat{T}(\hat{S}\ket{u})
+\]</div>
+<p>Operadores atuam tanto nos vetores <em>kets</em> como nos vetores duais <em>bras</em>, seguindo a seguinte notação (atenção para a ordem!):
+$<span class="math notranslate nohighlight">\( 
+\hat{T}\ket{u} \quad \text{ ou } \quad \bra{u} \hat{T}
+\)</span><span class="math notranslate nohighlight">\(
+mas nunca \)</span>(,\ket{u} \hat{T},)<span class="math notranslate nohighlight">\( ou \)</span>(,\hat{T} \bra{u},)$, que são formas incorretas (inválidas)!</p>
+<section id="exemplos-importantes">
+<h3>Exemplos importantes<a class="headerlink" href="#exemplos-importantes" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Operador Identidade:</strong> o operador mais simples
+$<span class="math notranslate nohighlight">\(
+\mathbf{\hat{1}}\ket{u}=\ket{u}
+\)</span>$</p></li>
+<li><p><strong>Produto externo (definição):</strong> o produto externo entre <em>kets</em> e <em>bras</em> é dado por
+$<span class="math notranslate nohighlight">\(
+\ket{\psi}\bra{\phi} = \hat{P}
+\)</span>$
+note que o produto externo resulta num operador e não num escalar! Essa construção será muito útil, como veremos adiante.</p></li>
+<li><p><strong>Operador projetor:</strong> usando o produto externo, podemos calcular as projeções de um dado vetor numa certa direção <span class="math notranslate nohighlight">\(\ket{u_i}\)</span>, ou numa base <span class="math notranslate nohighlight">\(\{ u_i \}\)</span>, fazendo</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ll}
+\hat{P}_{u_i} = | u_i \rangle \langle u_i |  &amp;\rightarrow \quad \hat{P}_{u_i} | \chi\rangle = | u_i \rangle (\langle u_i |\chi\rangle) = \beta | u_i \rangle \\
+\hat{P}_{u} = \sum_i | u_i \rangle \langle u_i |  &amp;\rightarrow \quad  {P}_{u} | \chi\rangle = \sum_i \,c_i | u_i \rangle = | \chi\rangle
+\end{array}
+\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>Relação de completeza:</strong> usando os resultados anteriores podemos observar que</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+|\psi\rangle=\sum_{i=1}^{n}c_i\left|u_{i}\right\rangle = \sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i} | \psi\right\rangle=\left(\sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i}\right|\right)|\psi\rangle
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^{n}\left|u_{i}\right\rangle\left\langle u_{i}\right| = \mathbf{\hat{1}}
+\]</div>
+</section>
+<section id="representacao-de-operadores">
+<h3>Representação de operadores<a class="headerlink" href="#representacao-de-operadores" title="Permalink to this heading">#</a></h3>
+<p>A operação matemática de transformar um vetor de um espaço vetorial linear num outro vetor, através da ação de um operador linear, pode ser representada de várias formas. Uma delas é a representação matricial, onde os operadores são representados por matrizes quadradas e os vetores por matrizes linhas e colunas. Neste caso, a transformação linear torna-se uma mera multiplicação dessas matrizes.</p>
+<p>É importante lembrar que, da mesma forma que os vetores do espaço, os operadores têm existência e significado próprios no espaço vetorial e sua ação independe da representação ou da base escolhida. Por outro lado, sua representação matricial, em geral, depende da base escolhida. Devemos lembrar, porém, que a forma matricial é apenas uma das representações possíveis de um operador linear.</p>
+<p><strong>Representação matricial</strong></p>
+<p>A matriz de um operador numa dada base pode ser obtida a partir da ação do operador em cada vetor da base. Assim, se <span class="math notranslate nohighlight">\(\{ u_i \}\)</span> representa o conjunto de vetores da base, as componentes do operador <span class="math notranslate nohighlight">\(\hat{T}\)</span> podem ser obtidas através da operação</p>
+<div class="math notranslate nohighlight">
+\[
+T_{i j}=\left\langle u_{i}|\hat{T}| u_{j}\right\rangle.
+\]</div>
+<p>Em um espaço vetorial de dimensão n, as componentes do operador podem ser arranjadas na forma de uma matriz quadrada <span class="math notranslate nohighlight">\(n \times n\)</span>, onde <span class="math notranslate nohighlight">\(T_{i j}\)</span> representa o elemento na linha <span class="math notranslate nohighlight">\(i\)</span> e coluna <span class="math notranslate nohighlight">\(j\)</span>, conforme:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\hat{T} \rightarrow\left(T_{i j}\right) &amp;=\left(\begin{array}{cccc}
+T_{11} &amp; T_{12} &amp; \dots &amp; T_{1 n} \\
+T_{21} &amp; T_{22} &amp; \dots &amp; T_{2 n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+T_{n 1} &amp; T_{n 2} &amp; \dots &amp; T_{n n}
+\end{array}\right) \\
+&amp;=\left(\begin{array}{cccc}
+\left\langle u_{1}|\hat{T}| u_{1}\right\rangle &amp; \left\langle u_{1}|\hat{T}| u_{2}\right\rangle &amp; \dots &amp; \left\langle u_{1}|\hat{T}| u_{n}\right\rangle \\
+\left\langle u_{2} \hat{T} | u_{1}\right\rangle &amp; \left\langle u_{2}|\hat{T}| u_{2}\right\rangle &amp; \dots &amp; \left\langle u_{2}|\hat{T}| u_{n}\right\rangle \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\left\langle u_{n}|\hat{T}| u_{1}\right\rangle &amp; \left\langle u_{n}|\hat{T}| u_{2}\right\rangle &amp; \dots &amp; \left\langle u_{n}|\hat{T}| u_{n}\right\rangle
+\end{array}\right)
+\end{aligned}
+\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Exercício sugerido</strong></p>
+<p>Suponha uma base ortonormal <span class="math notranslate nohighlight">\(\left\{\left|u_{1}\right\rangle,\left|u_{2}\right\rangle,\left|u_{3}\right\rangle\right\}\)</span>, um operador <span class="math notranslate nohighlight">\(\hat{A}\)</span> cuja a ação é dada por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{l}
+\hat{A}\left|u_{1}\right\rangle=2\left|u_{1}\right\rangle; \\
+\hat{A}\left|u_{2}\right\rangle=3\left|u_{1}\right\rangle-i\left|u_{3}\right\rangle; \\
+\hat{A}\left|u_{3}\right\rangle=-\left|u_{2}\right\rangle
+\end{array}
+\end{split}\]</div>
+<p>Escreve a matriz que representa o operador nesta base.</p>
+</div>
+<p><strong><em>Definição</em> : Traço de um operador</strong></p>
+<p>O traço de um operador <span class="math notranslate nohighlight">\(\hat{T}\)</span>, denotado por <span class="math notranslate nohighlight">\(\text{Tr}(\hat{T})\)</span>, é definido como sendo a soma dos elementos na diagonal principal da matriz que o representa</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Tr}(\hat{T})=T_{11}+T_{22}+\ldots+T_{n n}=\sum_{i=1}^{n} T_{i i}.
+\]</div>
+<p>Alternativamente, o traço também pode ser escrito como:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Tr}(\hat{T})=\left\langle u_{1}|\hat{T}| u_{2}\right\rangle+\left\langle u_{2}|\hat{T}| u_{2}\right\rangle+\ldots+\left\langle u_{n}|\hat{T}| u_{n}\right\rangle=\sum_{i=1}^{n}\left\langle u_{i}|\hat{T}| u_{i}\right\rangle
+\]</div>
+<p>!!! question “Exercício sugerido”
+O traço de um operador obedece uma relação cíclica, como indicado
+$<span class="math notranslate nohighlight">\(
+    \operatorname{Tr}(A B C)=\operatorname{Tr}(B C A)=\operatorname{Tr}(C A B)
+    \)</span><span class="math notranslate nohighlight">\(
+    Prove isso para o caso de dois operadores \)</span>A<span class="math notranslate nohighlight">\( e \)</span>B<span class="math notranslate nohighlight">\(, i.e. prove que \)</span>\operatorname{Tr}(A B)=\operatorname{Tr}(B A)$</p>
+</section>
+<section id="valores-esperados">
+<h3>Valores esperados<a class="headerlink" href="#valores-esperados" title="Permalink to this heading">#</a></h3>
+<p>O valore esperado de um operador com relação a um estado <span class="math notranslate nohighlight">\(\Psi\)</span> é dado por</p>
+<div class="math notranslate nohighlight">
+\[
+\langle\hat{A}\rangle=\langle\Psi|\hat{A}| \Psi\rangle
+\]</div>
+<p>!!! question “Exercício sugerido”
+Considere uma partícula no estado
+$<span class="math notranslate nohighlight">\(
+    |\Psi\rangle=2 i\left|u_{1}\right\rangle-\left|u_{2}\right\rangle+4 i\left|u_{3}\right\rangle
+    \)</span><span class="math notranslate nohighlight">\(
+    e um operador
+    \)</span><span class="math notranslate nohighlight">\(
+    \hat{A}=\left|u_{1}\right\rangle\left\langle u_{1}| -2 i| u_{1}\right\rangle\left\langle u_{2}|+| u_{3}\right\rangle\left\langle u_{3}\right|
+    \)</span><span class="math notranslate nohighlight">\(
+    Considerando que \)</span>{ |u_i\rangle }<span class="math notranslate nohighlight">\( é uma base ortonormal, calcule \)</span>\langle \hat{A} \rangle$ nesse estado.</p>
+</section>
+<section id="autovalores-e-autovetores">
+<h3>Autovalores e autovetores<a class="headerlink" href="#autovalores-e-autovetores" title="Permalink to this heading">#</a></h3>
+<p>Quando um operador age sobre um dado vetor (estado) e o resultado é o mesmo vetor (estado) multiplicado por um escalar, o vetor é chamado de autovetor (autoestado) e o escalar de autovalor. Assim, por exemplo, no caso da energia total
+$<span class="math notranslate nohighlight">\(
+\hat{H}|\psi_n\rangle = E_n |\psi_n \rangle
+\)</span>$</p>
+<p>No contexto da mecânica quântica, operadores de observáveis físicos têm como autovalores o conjunto de todas as possíveis medidas daquela grandeza física, num dado sistema quântico. Os autovetores de um operador são autoestados do sistema quântico e são muito importantes, pois esses autovetores formam uma base do espaço e permitem representar qualquer estado do sistema. A seguir temos uma breve revisão de como calcular autovalores e autovetores, a partir de conceitos e métodos de Algebra Linear.</p>
+<p><strong>Cálculo dos autovalores</strong></p>
+<p>Dado um operador linear <span class="math notranslate nohighlight">\(\hat{T}\)</span>, como já vimos, pode-se sempre representá-lo por uma matriz <span class="math notranslate nohighlight">\(T\)</span>. O conjunto de autovalores <span class="math notranslate nohighlight">\(\lambda\)</span> dessa matriz podem ser determinados através da <em>equação característica</em> (também chamada de <em>equação secular</em>), para o determinante abaixo:
+$<span class="math notranslate nohighlight">\(
+\operatorname{det}(T-\lambda I)=0\)</span><span class="math notranslate nohighlight">\(
+onde \)</span>I=(\mathbf{\hat{1}})<span class="math notranslate nohighlight">\( é a matriz identidade. A solução da equação característica fornece os autovalores \)</span>\lambda$, que são as raízes do <em>polinômio</em> (<em>característico</em>), indicado acima.</p>
+<p>!!! question “Exercício sugerido”
+Escreva o equação característica e ache os autovalores da matriz</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$$
+A = 
+\begin{pmatrix}
+7i &amp; -1 \\ 
+2 &amp; -6i
+\end{pmatrix} 
+$$
+</pre></div>
+</div>
+<p><strong>Cálculo dos autovetores</strong></p>
+<p>A partir dos autovalores pode-se determinar os autovetores da matriz <span class="math notranslate nohighlight">\(T\)</span>, que pode ser então escrita na forma diagonal. Para ilustrar melhor isso, usaremos um exemplo, a partir do problema proposto a seguir.</p>
+<p>!!! question “Exercício sugerido”
+Considere o operador <span class="math notranslate nohighlight">\(\hat{T}=\ket{\phi_1}\bra{\phi_1}+2\ket{\phi_1}\bra{\phi_2}+\ket{\phi_2}\bra{\phi_1}\)</span>, expresso numa base ortonormal. Ache a matriz <span class="math notranslate nohighlight">\(T\)</span>, que representa o operador nesta base, e determine os autovetores normalizados do operador, com seus autovalores. Considere que o espaço é bidimensional.</p>
+<p>Antes de seguir, você deve resolver o problema proposto acima, em detalhe, pelo menos até onde puder, para ter certeza de que está entendo todos os passos necessários à resolução do problema. Ao fazer isso irá encontrar os valores que usaremos na resolução que exemplificada o cálculo de um dos autovetores, a seguir</p>
+<p>!!! example “Exemplo: resolução dos autovetores”<br />
+Os autovalores do problema anterior são <span class="math notranslate nohighlight">\(\lambda_1=2\)</span> e <span class="math notranslate nohighlight">\(\lambda_2=-1\)</span>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Substitui-se, então, esses valores, um de cada vez, na equação de autovalores $\hat{T}\ket{u_i}=\lambda_i \ket{u_i}$ para determinar os autovetores $\{ \ket{u_1},\ket{u_2} \}$, como é mostrado abaixo para $\ket{u_2}$.
+
+$$
+\begin{pmatrix}
+1 &amp; 2 \\ 
+1 &amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+a \\ 
+b
+\end{pmatrix} = -
+\begin{pmatrix}
+a \\
+b
+\end{pmatrix}
+$$
+
+$$
+\Rightarrow a + 2b = -a, \text{ ou } b = -a.
+$$
+
+portanto,
+
+$$
+\ket{u_2}= 
+\begin{pmatrix}
+a \\
+-a
+\end{pmatrix}.
+$$
+
+Normalizando o vetor temos:
+
+$$
+\bra{u_2} u_2 \rangle = 1 \rightarrow 2a^2 = 1 \Rightarrow a=\frac{1}{\sqrt{2}},
+$$
+
+portanto, finalmente, temos:
+
+$$
+\ket{u_2} = 
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 \\
+-1
+\end{pmatrix}.
+$$
+
+Verifique agora que 
+
+$$ 
+\ket{u_1} = \frac{1}{\sqrt{5}} 
+\begin{pmatrix} 
+2 \\ 
+1 
+\end{pmatrix}.
+$$
+</pre></div>
+</div>
+</section>
+<section id="conjugacao-hermitiana">
+<h3>Conjugação Hermitiana<a class="headerlink" href="#conjugacao-hermitiana" title="Permalink to this heading">#</a></h3>
+<p>Até agora vimos que um operador age num <em>ket</em> para produzir um novo <em>ket</em>, de acordo com <span class="math notranslate nohighlight">\(\hat{T} \ket{u} = \ket{v}.\)</span> Vejamos agora, mais atentamente, sua ação dentro de um produto interno <span class="math notranslate nohighlight">\(\bra{w}v\rangle = \braket{w}{\hat{T}}{u}\)</span>. Sabemos que isso resulta num escalar (número) complexo.</p>
+<p>Podemos tomar complexo conjugado desse número, usando a relação <span class="math notranslate nohighlight">\(\bra{w}v\rangle = \bra{v}w\rangle^*\)</span>. Observe atentamente o que ocorre com o operador</p>
+<div class="math notranslate nohighlight">
+\[
+\braket{w}{\hat{T}}{v} = \braket{v}{\hat{T}}{w}^* =\braket{w}{\hat{T^{\dagger}}}{v}
+\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\hat{T^{\dagger}}\)</span> (pronuncia-se “T <em>dagger</em>”) é chamado de conjugado Hermitiano, ou Hermitiano conjugado, ou ainda <strong>adjunto</strong> do operador <span class="math notranslate nohighlight">\(\hat{T}\)</span>.</p>
+<p>!!! note “<strong>Como formar o Adjunto de uma expressão geral?</strong>”
+1. Substitua qualquer constante por seu complexo conjugado.
+2. Substitua <em>kets</em> pelos <em>bras</em> associados, e vice-versa.
+3. Substitua cada operador por seu Adjunto.
+4. Inverta a ordem de todos os fatores na expressão.</p>
+<p><strong>O conjugado Hermitiano de uma matriz</strong></p>
+<p>Já sabemos como encontrar a matriz <span class="math notranslate nohighlight">\(M\)</span> de um operador <span class="math notranslate nohighlight">\(\hat{M}\)</span> qualquer. Para encontrar a matriz do Adjunto desse, simbolizada por <span class="math notranslate nohighlight">\(M^{\dagger}\)</span>, basta seguir os seguintes passos:</p>
+<p>!!! note “<strong>Matriz Adjunta</strong>”
+1. Calcule a matriz transposta <span class="math notranslate nohighlight">\(M^T\)</span>, trocando as linhas pelas colunas.
+2. Tome o complexo conjugado de cada elemento de <span class="math notranslate nohighlight">\(M^T.\)</span></p>
+<p>De forma resumida:</p>
+<div class="math notranslate nohighlight">
+\[
+M^{\dagger}= \left( M^T \right)^*.
+\]</div>
+<p><strong>Propriedade da operação de transposição</strong></p>
+<p>!!! note “”
+1. <span class="math notranslate nohighlight">\((A+B)^T = A^T + B^T.\)</span>
+2. <span class="math notranslate nohighlight">\((A^T)^T = A.\)</span>
+3. <span class="math notranslate nohighlight">\((aA)^T= a A^T.\)</span>
+4. <span class="math notranslate nohighlight">\((AB)^T = B^T A^T.\)</span></p>
+</section>
+<section id="operadores-hermitianos">
+<h3>Operadores Hermitianos<a class="headerlink" href="#operadores-hermitianos" title="Permalink to this heading">#</a></h3>
+<p>Um operador é dito Hermitiano quando é auto-adjunto: <span class="math notranslate nohighlight">\(\hat{T}^{\dagger}=\hat{T}\)</span>. Isto é, quando o seu adjunto é ele próprio. Para um operador Hermitiano, temos que</p>
+<div class="math notranslate nohighlight">
+\[
+\braket{w}{\hat{T}}{v}=\braket{v}{\hat{T}}{w}^*
+\]</div>
+<p>Veremos que os operadores de observáveis físicos na mecânica quântica devem ser sempre operadores Hermitianos. Como esse operadores podem ser representado por matrizes, é interessante ver com determinar se uma matriz é Hermitiana.</p>
+<p><strong>Matriz Hermitiana</strong></p>
+<p>Uma matriz <span class="math notranslate nohighlight">\(M\)</span> é Hermitiana se satisfaz:</p>
+<div class="math notranslate nohighlight">
+\[
+M = M^{\dagger}.
+\]</div>
+<p>Como vimos, <span class="math notranslate nohighlight">\(M^{\dagger}\)</span> corresponde ao complexo conjugado da matriz transposta. Portanto, para satisfazer essa condição, os elementos da diagonal principal da matriz devem ser todos números reais (não complexos). Como consequência, o traço do operador (matriz) será, necessariamente um número real.</p>
+<p><strong>Autovalores de um operador Hermitiano</strong></p>
+<p>Pode-se demonstrar que operadores Hermitianos têm autovalores reais (<em>verifique!</em>). Por conta dessa propriedade, requer-se que todos os observáveis físicos na mecânica quântica, sejam representados por operadores Hermitianos. Portanto, tanto o traço como os autovalores de um operador Hermitiano são números reais.</p>
+<p><strong>Autovetores de um operador Hermitiano</strong></p>
+<p>Outra propriedade importante dos operadores Hermitianos é que os autovetores correspondentes a autovalores diferentes são ortogonais. Também não é difícil demonstrar essa propriedade (<em>verifique!</em>), usando a propriedade anterior, que os autovalores são números reais. Como os autovetores são ortogonais, é possível construir uma base (ortonormal) que gere o espaço.</p>
+<p>!!! info “Propriedades de operadores Hermitianos”
+1. Autovalores reais
+2. Autovetores ortogonais, para autovalores diferentes
+3. Autovetores geram o espaço (podem formar uma base)</p>
+<p><strong>Operador anti-Hermitiano</strong></p>
+<p>Um operador <span class="math notranslate nohighlight">\(\hat{A}\)</span> é dito anti-Hermitiano se:</p>
+<div class="math notranslate nohighlight">
+\[
+A^{\dagger}=-A
+\]</div>
+<p>Verifique que, neste caso, os elementos da diagonal principal da matriz do operador anti-Hermitiano(a) são todos números imaginários puros.</p>
+</section>
+<section id="operadores-normais">
+<h3>Operadores Normais<a class="headerlink" href="#operadores-normais" title="Permalink to this heading">#</a></h3>
+<p>Um operador <span class="math notranslate nohighlight">\(A\)</span> é dito ser <em>normal</em> se ele comuta com seu adjunto:</p>
+<div class="math notranslate nohighlight">
+\[
+AA^{\dagger} = A^{\dagger}A.
+\]</div>
+<p>Claramente, um operador Hermitiano é também um operador normal. Operadores normais são importantes pois há um <a class="reference external" href="https://en.wikipedia.org/wiki/Spectral_theorem">teorema</a> que garante que eles podem ser escritos na forma de <em>decomposição espectral</em>, que estudaremos adiante e será muito útil. Voltaremos a falar deles ao discutir o processo de diagonalização de um operador.</p>
+</section>
+<section id="operadores-unitarios">
+<h3>Operadores Unitários<a class="headerlink" href="#operadores-unitarios" title="Permalink to this heading">#</a></h3>
+<p>Um operador <span class="math notranslate nohighlight">\(\hat{U}\)</span> (de matriz <span class="math notranslate nohighlight">\(U\)</span>) é unitário se:</p>
+<div class="math notranslate nohighlight">
+\[
+UU^{\dagger} = U^{\dagger} U = \mathbf{\hat{1}}
+\]</div>
+<p>Isso significa que</p>
+<div class="math notranslate nohighlight">
+\[
+U^{\dagger} = U^{-1}
+\]</div>
+<p>ou seja, que a matriz adjunta é igual a matriz inversa.</p>
+<p>Outra importante característica das matrizes unitárias é que as linhas e colunas dessa matrizes formam um conjunto de vetores ortonormais. Pode-se perceber ainda que operadores unitários também são operadores normais e, portanto, podem tem uma decomposição spectral, como veremos depois.</p>
+<p>Finalmente, outra característica importante desses operadores é que geometricamente eles preservam o produto interno entre vetores, com pode ser facilmente verificado</p>
+<div class="math notranslate nohighlight">
+\[
+( U\ket{v},U\ket{w}) = \bra{v}U^{\dagger}U\ket{w}=\braket{v}{\mathbf{\hat{1}}}{w}=\bra{v}w\rangle. 
+\]</div>
+</section>
+<section id="comutadores-e-anticomutadores">
+<h3>Comutadores e anticomutadores<a class="headerlink" href="#comutadores-e-anticomutadores" title="Permalink to this heading">#</a></h3>
+<p>Seja <span class="math notranslate nohighlight">\(\hat{A}\)</span> e <span class="math notranslate nohighlight">\(\hat{B}\)</span> dois operadores lineares do espaço. Em geral, temos que <span class="math notranslate nohighlight">\(\hat{A}\hat{B} \ne \hat{B}\hat{A}.\)</span> Assim, define-se o comutador <span class="math notranslate nohighlight">\([\hat{A},\hat{B}]\)</span> como sendo</p>
+<div class="math notranslate nohighlight">
+\[
+[\hat{A},\hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}.
+\]</div>
+<p>Se <span class="math notranslate nohighlight">\([\hat{A},\hat{B}]=0\)</span>, dizemos que os operadores comutam. Dois operadores comutam se, e apenas se, eles compartilham uma mesma base de autovetores comuns.</p>
+<p><strong>Propriedades do comutador</strong></p>
+<p>!!! note “”
+1. <span class="math notranslate nohighlight">\([A,B]=-[B,A]\)</span>
+2. <span class="math notranslate nohighlight">\([A+B,C]=[A,C]+[B,C]\)</span>
+3. <span class="math notranslate nohighlight">\([A,BC]=[A,B]C+B[A,C]\)</span>
+4. Se <span class="math notranslate nohighlight">\(\hat{X}\)</span> e <span class="math notranslate nohighlight">\(\hat{P}\)</span> representam os operadores posição e momento linear, então <span class="math notranslate nohighlight">\([\hat{X}\)</span>, <span class="math notranslate nohighlight">\(\hat{P}]=i\hbar\)</span>, enquanto <span class="math notranslate nohighlight">\([\hat{X}\)</span>, <span class="math notranslate nohighlight">\(\hat{X}]= [\hat{P}\)</span>, <span class="math notranslate nohighlight">\(\hat{P}]=0.\)</span></p>
+<p><strong>Anticomutador</strong></p>
+<p>Define-se o anticomutador <span class="math notranslate nohighlight">\(\{\hat{A},\hat{B}\}\)</span> como sendo</p>
+<div class="math notranslate nohighlight">
+\[
+\{ \hat{A},\hat{B} \} = \hat{A}\hat{B} + \hat{B}\hat{A}.
+\]</div>
+</section>
+<section id="conjunto-completo-de-observaveis-que-comutam-ccoc">
+<h3>Conjunto Completo de Observáveis que Comutam (CCOC)<a class="headerlink" href="#conjunto-completo-de-observaveis-que-comutam-ccoc" title="Permalink to this heading">#</a></h3>
+<p>Um conjunto de operadores <span class="math notranslate nohighlight">\(\hat{A}\)</span>, <span class="math notranslate nohighlight">\(\hat{B}\)</span>, <span class="math notranslate nohighlight">\(\hat{C}, \dots\)</span> forma um CCCO se todos os subpares desses operadores comutam entre si.</p>
+<div class="math notranslate nohighlight">
+\[
+[\hat{A},\hat{B}] = [\hat{B},\hat{C}] = [\hat{A},\hat{C}] = \dots= 0
+\]</div>
+<p>Isso implica que existe uma base comum de autovetores que é única para todos eles, exceto por um fator multiplicativo.</p>
 </section>
 </section>
 </section>
@@ -709,6 +1113,15 @@ Para obter o <em>bra</em> correspondente a um dado <em>ket</em>, <span class="ma
         <p class="prev-next-title">7600042 - Tópicos Especiais em Mecânica Quântica (2023)</p>
       </div>
     </a>
+    <a class="right-next"
+       href="RevMQ-p2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Estrutura matemática da MQ - parte 2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -743,6 +1156,19 @@ Para obter o <em>bra</em> correspondente a um dado <em>ket</em>, <span class="ma
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vetores-de-base">Vetores de base</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procedimento-de-gram-schmidt">Procedimento de Gram-Schmidt</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra-de-dirac">Algebra de Dirac</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-lineares">Operadores lineares</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos-importantes">Exemplos importantes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representacao-de-operadores">Representação de operadores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-esperados">Valores esperados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autovalores-e-autovetores">Autovalores e autovetores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjugacao-hermitiana">Conjugação Hermitiana</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-hermitianos">Operadores Hermitianos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-normais">Operadores Normais</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-unitarios">Operadores Unitários</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comutadores-e-anticomutadores">Comutadores e anticomutadores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunto-completo-de-observaveis-que-comutam-ccoc">Conjunto Completo de Observáveis que Comutam (CCOC)</a></li>
 </ul>
 </li>
 </ul>

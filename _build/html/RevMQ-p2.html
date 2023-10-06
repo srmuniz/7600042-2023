@@ -1,0 +1,1083 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Estrutura matemática da MQ - parte 2 &#8212; 7600042-2023 Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'RevMQ-p2';</script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fundamentos da Mecânica Quântica" href="RevMQ-p3.html" />
+    <link rel="prev" title="Estrutura matemática da MQ - parte 1" href="RevMQ-p1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    7600042 - Tópicos Especiais em Mecânica Quântica (2023)
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="RevMQ-p1.html">Estrutura matemática da MQ - parte 1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Estrutura matemática da MQ - parte 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RevMQ-p3.html">Fundamentos da Mecânica Quântica</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://srmuniz.github.io/7600042-2023/intro.html" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://srmuniz.github.io/7600042-2023/intro.html/issues/new?title=Issue%20on%20page%20%2FRevMQ-p2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/RevMQ-p2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Estrutura matemática da MQ - parte 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacoes-lineares-e-mudancas-de-base">Transformações lineares e mudanças de base</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forma-diagonal">Forma diagonal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mudanca-de-base">Mudança de base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacoes-de-similaridade">Transformações de similaridade</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonalizacao-de-operadores">Diagonalização de operadores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subespacos-e-projetores">Subespaços e projetores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-de-operadores">Funções de operadores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizacao-para-espacos-continuos">Generalização para espaços contínuos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-de-ondas">Funções de ondas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#produto-tensorial">Produto tensorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representacao-matricial-do-produto-tensorial">Representação matricial do produto tensorial</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><span class="math notranslate nohighlight">\(\newcommand{\bra}[1]{\left\langle #1 \right|}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\ket}[1]{\left| #1 \right\rangle}\)</span>
+<span class="math notranslate nohighlight">\(\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}\)</span></p>
+<section class="tex2jax_ignore mathjax_ignore" id="estrutura-matematica-da-mq-parte-2">
+<h1>Estrutura matemática da MQ - parte 2<a class="headerlink" href="#estrutura-matematica-da-mq-parte-2" title="Permalink to this heading">#</a></h1>
+<p>Nesta semana continuaremos a discutir a estrutura matemática da teoria quântica, complementando a discussão a respeito de transformações lineares e, em particular, mudanças de bases e o processo de diagonalização de um operador (matriz). Também iremos apresentar alguns casos importantes como os operadores projetores em subespaços e o produto tensorial que permite expandir espaços de Hilbert.</p>
+<p>Para retornar aos tópicos das aulas anteriores, use o menu de navegação ou <span class="xref myst">clique aqui</span>.</p>
+<section id="transformacoes-lineares-e-mudancas-de-base">
+<h2>Transformações lineares e mudanças de base<a class="headerlink" href="#transformacoes-lineares-e-mudancas-de-base" title="Permalink to this heading">#</a></h2>
+<p>Na aula anterior nós discutimos como encontrar os autovetores de um operador. Surgiu, então, a questão se os autovetores do operador deveriam ser sempre ortogonais e poderiam formar uma base. Aqui, vamos iniciar esta discussão com a questão, geral, se os autovetores de um operador podem sempre formam uma base do espaço vetorial. Nos casos onde isso é possível, como construí-la?</p>
+<p>Primeiro, vamos relembrar que condições um conjunto deve satisfazer para formar uma base. De maneira simples, para formar uma base do espaço (ou subespaço) um conjunto de autovetores devem satisfazer duas condições:</p>
+<p>!!! info “Condições para formar uma base”
+1. Ser ortonormais.
+2. Satisfazer a relação de completeza.</p>
+<p>Para ajudar a fixar esses conceitos, considere o seguinte exemplo.</p>
+<p>!!! example “Exemplo”
+Considere o operador dado pela matriz</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$$
+Z = 
+\begin{pmatrix}
+    1 &amp; 0 \\
+    0 &amp; -1
+\end{pmatrix}
+$$
+
+Observe que seus autovalores são $\lambda_{1,2}=\pm 1$.
+
+Tendo como autovetores:
+
+$$
+\ket{u_1}=
+\begin{pmatrix}
+    1 \\ 0
+\end{pmatrix}, \quad 
+\ket{u_2}=
+\begin{pmatrix}
+    0 \\ 1
+\end{pmatrix}.    
+$$
+
+É fácil verificar que esse autovetores são ortonomais, portanto satisfazendo a primeira condição. 
+
+Agora, precisamos verificar se a segunda condição também é satisfeita. Ou seja, se o conjunto é completo. Para isso, fazemos:
+
+$$
+\ket{u_1} \bra{u_1} + \ket{u_2} \bra{u_2} =
+\begin{pmatrix}
+    1 \\ 0
+\end{pmatrix}
+\begin{pmatrix}
+    1 &amp; 0
+\end{pmatrix}
++
+\begin{pmatrix}
+    0 \\ 1
+\end{pmatrix}
+\begin{pmatrix}
+    0 &amp; 1
+\end{pmatrix} \\
+=
+\begin{pmatrix}
+    1 &amp; 0 \\ 
+    0 &amp; 0
+\end{pmatrix}
++
+\begin{pmatrix}
+    0 &amp; 0 \\ 
+    0 &amp; 1
+\end{pmatrix} = 
+\begin{pmatrix}
+    1 &amp; 0 \\ 
+    0 &amp; 1
+\end{pmatrix} = \mathbb{1}.
+$$ 
+
+Portanto, verificamos que a relação de completeza também é satisfeita. 
+
+A conclusão final é que, neste caso, os autovetores formam uma base. De faot, é fácil verificar que qualquer vetor de dimensão dois pode ser escrito numa expansão em termos do conjunto $\{ \ket{u_1},\ket{u_2} \}$.
+
+Seja, por exemplo, $\ket{\psi}$ um vertor arbitrário
+
+$$
+\ket{\psi} = 
+\begin{pmatrix}
+    \alpha \\ \beta    
+\end{pmatrix} =
+\alpha
+\begin{pmatrix}
+    1 \\ 0    
+\end{pmatrix} + 
+\beta
+\begin{pmatrix}
+    0 \\ 1   
+\end{pmatrix} = \alpha \ket{u_1} + \beta \ket{u_2}.
+$$
+</pre></div>
+</div>
+<section id="forma-diagonal">
+<h3>Forma diagonal<a class="headerlink" href="#forma-diagonal" title="Permalink to this heading">#</a></h3>
+<p>O operador <span class="math notranslate nohighlight">\(\hat{Z}\)</span> é um exemplo de operador na forma diagonal.</p>
+<p>!!! info “Representação diagonal”
+Um operador <span class="math notranslate nohighlight">\(\hat{A}\)</span> está  na forma diagonal quando escrito</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$$
+\hat{A} = \sum_i \lambda_i \ket{u_i} \bra{u_i}
+$$
+
+onde os vetores $\ket{u_i}$ formam uma base ortonormal. Neste caso, a matriz $A$ tem a forma
+
+$$
+A = 
+\begin{pmatrix}
+    \lambda_1 &amp; 0         &amp; \dots  &amp; 0 \\
+    0         &amp; \lambda_2 &amp; \dots  &amp; 0 \\
+    \vdots    &amp; \vdots    &amp; \ddots &amp; \vdots \\
+    0         &amp; 0         &amp; \dots  &amp; \lambda_n
+\end{pmatrix}
+$$
+
+Um operador é dito _diagonalizável_ quando pode ser escrito na forma diagonal. A representação diagonal também é chamada de _decomposição ortogonal_. Nem todos os operadores de um espaço vetorial tem forma diagonal.
+</pre></div>
+</div>
+<p>Na última aula, vimos também um exemplo em que</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M = 
+\begin{pmatrix}
+    1 &amp; 2 \\
+    1 &amp; 0
+\end{pmatrix}
+\end{split}\]</div>
+<p>tem autovetores que não são ortonormais</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ket{u_1} = \frac{1}{\sqrt{5}}
+\begin{pmatrix}
+    2 \\ 1
+\end{pmatrix}, \quad
+\ket{u_2} = \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+    1 \\ -1
+\end{pmatrix}  \Rightarrow \quad
+\bra{u_1} u_2\rangle = \frac{1}{\sqrt{10}}.
+\end{split}\]</div>
+<p>Será que é possível reescrever o operador <span class="math notranslate nohighlight">\(M\)</span> numa forma diagonal? Aliás, qual seria o significado disso e quais propriedades tal operação deveria satisfazer, se existisse? Mais importante ainda, qual seria sua utilidade?</p>
+<p>Mais adiante veremos quais são as condições necessárias para um operador ser diagonalizável. Veremos também como fazer para diagonalizá-lo. Antes, vamos introduzir mais dois conceitos importantes. Os conceitos de <em>mudança de base</em> e <em>transformações de similaridade</em>.</p>
+</section>
+<section id="mudanca-de-base">
+<h3>Mudança de base<a class="headerlink" href="#mudanca-de-base" title="Permalink to this heading">#</a></h3>
+<p>Para efeito de comparação e analogia, podemos pensar na mudança de base como algo parecido à mudança de sistema de coordenadas, com o qual já estamos acostumados na Física.</p>
+<p>Como sabemos, a representação de um vetor (ou operador), por exemplo, na forma matricial irá depender da base usada para representá-lo, pois em geral os valores das componentes serão diferentes, mas isso não altera o significado de cada um desses objetos.</p>
+<p>Dado um vetor qualquer</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{v} = \sum_i b_i \ket{b_i} = \sum_i c_i \ket{c_i},
+\]</div>
+<p>expresso nas bases <span class="math notranslate nohighlight">\(\{ \ket{b_i} \}\)</span> e <span class="math notranslate nohighlight">\(\{ \ket{c_i} \}\)</span>, é sempre possível achar uma transformação de coordenadas que permita expressar as coordenadas <span class="math notranslate nohighlight">\(c_i\)</span> desse vetor a partir das coordenadas <span class="math notranslate nohighlight">\(b_i\)</span>.</p>
+<p>Para isso, basta encontrar a matriz (operador linear), <span class="math notranslate nohighlight">\(S\)</span>, que leva cada vetor <span class="math notranslate nohighlight">\(\ket{b_i}\)</span>  no correspondente vetor <span class="math notranslate nohighlight">\(\ket{c_i}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{c_i} = S \ket{b_i} \rightarrow \ket{b_i} = S^{-1} \ket{c_i}
+\Rightarrow c_i = b_i (S^{-1}).
+\]</div>
+<p>Uma forma de pensar nisso é que a transformação <span class="math notranslate nohighlight">\(S\)</span> leva os vetores da base <span class="math notranslate nohighlight">\(\ket{b_i}\)</span> nos vetores da base <span class="math notranslate nohighlight">\(\ket{c_i}\)</span>. Neste caso, <span class="math notranslate nohighlight">\(S\)</span> é efetivamente um mapa de como fazer essa transformação dos vetores da base, e é uma receita (mapa) de como “levar” cada ponto de um sistema de coordenadas no ponto correspondente no outro sistema de coordenadas. Na verdade, é importante lembrar que aqui estamos interessados nas coordenadas (representação) do vetor, que está sendo representado nas diferentes bases (sistemas de coordenadas).</p>
+<p><img alt="picture" src="figuras/grid-transform3.png" />
+<strong>Figura 1: <em>Efeito de uma tranformação linear (S) num grid de pontos e nos versores da base</em></strong></p>
+<p>Note, porém, que nessa interpretação todo o sistema de coordenadas é transformado. Ou seja, o <em>grid</em> de pontos do espaço, onde cada ponto é espaçado pelos versores (vetores unitários) da base é transformado. Isso, em geral, representa “deformação” do espaço (mais estritamente, do grid de prontos representando o espaço). Se for linear, essa transformação fará com que um conjunto de pontos igualmente espaçados continue igualmente espaçados, mas como eles podem sofrer uma mudança de escala, os comprimentos e áreas do <em>grid</em> não são necessariamente conservados. Na verdade, pode-se demonstrar que as áreas serão escaladas por uma fator exatamente igual ao determinante da matriz de transformação.</p>
+<p>Como determinar a matriz de transformação?</p>
+<p>Na verdade, é bem simples. Basta considerar o efeito nos vetores da base. Usaremos a Fig. 1, acima, para ilustrar com um exemplo que nos ajudará a entender o processo. Imaginando que estamos indo da base <span class="math notranslate nohighlight">\(\ket{b_i}\)</span>, com os vetores indicados pelas setas pontilhadas, e cujas coordenadas são</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ket{b_1} = \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix};  
+\quad
+\ket{b_2} = \begin{pmatrix} 0 \\ 1 \\ \end{pmatrix}
+\end{split}\]</div>
+<p>os novos vetores da base <span class="math notranslate nohighlight">\(\ket{c_i}\)</span> são dados por</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ket{c_1}= 
+\left(
+\begin{array}{c}
+ \frac{1}{2} \\
+ \frac{3}{4} \\
+\end{array}
+\right);  
+\quad
+\ket{c_2}= 
+\left(
+\begin{array}{c}
+ -\frac{1}{3} \\
+ \frac{1}{2} \\
+\end{array}
+\right)
+\Rightarrow \quad 
+S = 
+\left(
+\begin{array}{cc}
+ \frac{1}{2} &amp; -\frac{1}{3} \\
+ \frac{3}{4} &amp; \frac{1}{2} \\
+\end{array}
+\right)
+\end{split}\]</div>
+<p>Portanto, as colunas da matriz de transformação correspondem aos vetores transformados da nova “base” (agora não mais ortonormal).</p>
+<p>Dada a matriz de transformação <span class="math notranslate nohighlight">\(S\)</span>, sabemos como todos os vetores do espaço se transformam, pois sabemos como os vetores da base se transformam. Assim,  podemos facilmente traduzir as coordenadas de uma base na outra, com facilidade. Mas como são transformados (ou representado) os operadores lineares de uma base para outra?</p>
+<p>A resposta simples é, novamente, ver o efeito da ação sobre os vetores expressos nas duas representações (bases) e usar as relações de transformação entre os vetores das buas bases para expressar os elementos de matriz do operador na nova base.</p>
+<p>Pode-se demonstrar (<em>verifique!</em>) que, se <span class="math notranslate nohighlight">\(L\)</span> for a representação matricial de um operador <span class="math notranslate nohighlight">\(\hat{L}\)</span> na primeira base <span class="math notranslate nohighlight">\(\ket{b_i}\)</span>, a sua representação matricial na segunda base será dada por</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{L} = S^{-1}L\,S.
+\]</div>
+</section>
+<section id="transformacoes-de-similaridade">
+<h3>Transformações de similaridade<a class="headerlink" href="#transformacoes-de-similaridade" title="Permalink to this heading">#</a></h3>
+<p>Para simplificar a notação, vamos expressar os operadores por matrizes, mas o resultado discutido aqui é geral.</p>
+<p>!!! info “Matrizes (transformações) similares”
+* Uma matriz <span class="math notranslate nohighlight">\(B\)</span> é dita similar a uma matriz <span class="math notranslate nohighlight">\(A\)</span> se <span class="math notranslate nohighlight">\(B = S^{-1}A\,S\)</span> para qualquer matriz invertível <span class="math notranslate nohighlight">\(S\)</span>.
+* Se <span class="math notranslate nohighlight">\(B\)</span> é similar a <span class="math notranslate nohighlight">\(A\)</span>, então <span class="math notranslate nohighlight">\(B\)</span> tem os mesmo autovalores de <span class="math notranslate nohighlight">\(A\)</span>. Isso pode ser facilmente demonstrado (<em>verifique!</em>).
+* Como consequência de ter os mesmos autovalores, as duas matrizes terão também o mesmo traço (soma dos autovalores) e determinante (produto dos autovalores).
+* Se a matriz <span class="math notranslate nohighlight">\(S\)</span> for <em>unitária</em> ela preservará normas e ângulos, de modo que se <span class="math notranslate nohighlight">\(A\)</span> for uma representação do operador <span class="math notranslate nohighlight">\(\hat{A}\)</span> numa base ortonormal, então <span class="math notranslate nohighlight">\(B\)</span> também o será. Como sempre trabalhamos com bases ortogonais, estaremos interessados geralmente em transformações <em>unitárias</em> de similaridade.</p>
+<p>Uma questão interessante agora é se seria possível, em geral, encontrar uma transformação <span class="math notranslate nohighlight">\(S\)</span> que transforme os autovetores de uma matriz <span class="math notranslate nohighlight">\(M\)</span>, geral, de tal modo que a eles passem a formar uma base do espaço. Algo, por exemplo, inverso ao mostrado na Figura 1. Em outras palavras, será que é possível encontrar uma transformação de similaridade <span class="math notranslate nohighlight">\(S\)</span> que coloque a matriz <span class="math notranslate nohighlight">\(M\)</span> numa forma diagonal (i.e., que diagonalize <span class="math notranslate nohighlight">\(M\)</span>)?</p>
+<p>Como vimos, nesta formulação da MQ usamos operadores lineares para representar grandezas físicas observáveis. Nesse contexto, vimos que os autovalores do operador estão associados aos valores das medidas daquele observável. Portanto, é muito desejável preservar os autovalores de um operador que represente grandezas físicas, se quisermos buscar transformação que o diagonalize. Para esse efeito, portanto, usaremos transformações de similaridades. Mas como encontrar tais transformações? Como diagonalizar <span class="math notranslate nohighlight">\(M\)</span>?</p>
+</section>
+</section>
+<section id="diagonalizacao-de-operadores">
+<h2>Diagonalização de operadores<a class="headerlink" href="#diagonalizacao-de-operadores" title="Permalink to this heading">#</a></h2>
+<p>Como estamos interessados e na diagonalização de operadores observáveis, vamos considerar aqui uma operador Hermitiano <span class="math notranslate nohighlight">\(C\)</span>, qualquer, que representa uma dada grandeza física. Estamos interessados em escrever esse operador numa forma diagonal <span class="math notranslate nohighlight">\(D\)</span>, seguindo uma transformação de similaridade <span class="math notranslate nohighlight">\(S\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+D = S^{-1}C\,S.
+\]</div>
+<p>Como fazemos para encontrar a transformação <span class="math notranslate nohighlight">\(S\)</span>?</p>
+<p>!!! info “Procedimento para encontrar a transformação S”
+1. Encontre os autovalores e autovetores da matriz <span class="math notranslate nohighlight">\(C\)</span>
+2. Normalize os autovetores de <span class="math notranslate nohighlight">\(C\)</span>
+3. Forme a matriz <span class="math notranslate nohighlight">\(S\)</span> de modo que as colunas dessa matriz sejam os autovetores (colunas) normalizados de <span class="math notranslate nohighlight">\(C\)</span>
+4. A matriz <span class="math notranslate nohighlight">\(S^{-1}\)</span> é a matriz inversa<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> de <span class="math notranslate nohighlight">\(S\)</span>, tal que <span class="math notranslate nohighlight">\(S^{-1}S=SS^{-1}=\mathbb{1}\)</span>.</p>
+<p>Fica como um <strong>exercício sugerido</strong> demonstrar que este procedimento resulta na forma diagonal</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+D =
+\begin{pmatrix}
+    \lambda_1 &amp; 0         &amp; \dots  &amp; 0 \\
+    0         &amp; \lambda_2 &amp; \dots  &amp; 0 \\
+    \vdots    &amp; \vdots    &amp; \ddots &amp; \vdots \\
+    0         &amp; 0         &amp; \dots  &amp; \lambda_n
+\end{pmatrix}
+= \sum_i \lambda_i \ket{u_i} \bra{u_i}
+\end{split}\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\lambda_i\)</span> são os autovalores de <span class="math notranslate nohighlight">\(C\)</span> e <span class="math notranslate nohighlight">\(D\)</span>.</p>
+<p>Será que esse procedimento funciona sempre? Não, nem sempre! Nem todas as matrizes são diagonalizáveis. Para isso algumas condições devem ser satisfeitas pela matriz <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<p>A primeira condição é que para ser diagonalizável uma matriz deve ter autovetores que geram o espaço. Assim, se todos os autovetores forem distintos, há uma boa chance dela ser diagonalizável. Mesmo quando há raízes múltiplas (degenerescência), em alguns casos, a matriz ainda pode ser diagonalizada, mas não sempre.</p>
+<p>Pode-se mostrar, porém, que toda matriz <em>normal</em> é diagonalizável. Embora, essa não é uma condição necessária. Além disso, todas as matrizes Hermitianas e todas as matrizes unitárias também são diagonalizáveis.</p>
+</section>
+<section id="subespacos-e-projetores">
+<h2>Subespaços e projetores<a class="headerlink" href="#subespacos-e-projetores" title="Permalink to this heading">#</a></h2>
+<p>Considere um espaço n-dimensional <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> com um base ortonormal <span class="math notranslate nohighlight">\(\ket{1},\ket{2},\dots,\ket{n}\)</span>. Um subespaço <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> de <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> é um subconjunto de <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> tal que <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> é ele próprio um espaço vetorial, com respeito as operações de soma e multiplicação por um escalar. Podemos verificar que <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> é um espaço vetorial usando os mesmos critérios usuais, mas se <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> for um subconjunto de <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>, basta verificar dois critérios</p>
+<ol class="arabic simple">
+<li><p>O vetor <em>zero</em> (nulo) pertence a <span class="math notranslate nohighlight">\(\mathcal{S}\)</span></p></li>
+<li><p>Para todos os  vetores <span class="math notranslate nohighlight">\(\ket{u}\)</span>, <span class="math notranslate nohighlight">\(\ket{v}\)</span> em <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> e escalar <span class="math notranslate nohighlight">\(\alpha\)</span>, temos que <span class="math notranslate nohighlight">\(\ket{u}+\ket{v}\)</span> e <span class="math notranslate nohighlight">\(\alpha \ket{u}\)</span> pertencem a <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>.</p></li>
+</ol>
+<p>Para isso é útil usar o operador projetor, que já discutimos na <span class="xref myst">seção 5.6</span>. Relembrando sua definição:</p>
+<p>!!! info “Operador de projeção: projetor”
+Suponha um subespaço de dimensão <span class="math notranslate nohighlight">\(m\)</span>, onde <span class="math notranslate nohighlight">\(m&lt;n\)</span>, que tem uma base ortonormal <span class="math notranslate nohighlight">\(\mathcal{U} = \{ \ket{u_1},\ket{u_2},\dots,\ket{u_m} \}\)</span>. O operador de projeção <span class="math notranslate nohighlight">\(\hat{P}_u\)</span> é dado por</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$$
+\hat{P}_u =\sum_{i=1}^{m} \ket{u_i]} \bra{u_i}.
+$$
+
+O operador de projeção tem duas propriedades importantes:
+
+1. $\hat{P}=\hat{P}^\dagger$, isto é, ele é um operador hermitiano.
+2. $\hat{P}=\hat{P}\hat{P} \equiv \hat{P}^2$, é igual ao seu quadrado.
+
+Podemos formar o projetor de apenas um vetor da base $\hat{P}_i=\ket{u_i}\bra{u_i}$ (imagine que o somatório estende-se apenas ao vetor $\ket{u_i}$). Esse operador é totalmente válico e obedece as duas propriedades acima. Ele claramente é hermitiano, por exemplo, e também obedece a segunda propriedade (_verifique!_). 
+</pre></div>
+</div>
+<p>Considere, por exemplo, o efeito de <span class="math notranslate nohighlight">\(\hat{P}_i \ket{\Psi}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{P}_i \ket{\Psi} = \ket{u_i} \bra{u_i} \Psi\rangle = (\bra{U_i}\Psi\rangle) \ket{u_i}.
+\]</div>
+<p>Veja que isso efetivamente “projeta” a componente de <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> na direção do vetor da base <span class="math notranslate nohighlight">\(\ket{u_i}\)</span>.</p>
+<p>Observe também que o projetor de um dado espaço (subespaço) é igual ao opeador identidade daquele espaço (subespaço), satisfazendo a relação de completeza daquele espaço (subespaço):</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{I}_m = \sum_{i=1}^{m} \ket{u_i} \bra{u_i} = \sum_{i=1}^{m} P_i = \mathbb{1}_m
+\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\mathbf{I}_m=\mathbb{1}_m\)</span> expressa explicitamente uma matriz identidade de ordem <span class="math notranslate nohighlight">\(m\)</span>.</p>
+</section>
+<section id="funcoes-de-operadores">
+<h2>Funções de operadores<a class="headerlink" href="#funcoes-de-operadores" title="Permalink to this heading">#</a></h2>
+<p>Assim como podemos expandir uma função ordinária <span class="math notranslate nohighlight">\(f(x)\)</span> numa série de Taylor<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \sum_{i=0}^{\infty} a_i x^i
+\]</div>
+<p>podemos, de forma similar, generalizar essa ideia para definir a função de um operador <span class="math notranslate nohighlight">\(F(\hat{A})\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+F(\hat{A}) = \sum_{i=0}^{\infty} a_i \hat{A}^i
+\]</div>
+<p>Note, porém, que em geral os coeficientes <span class="math notranslate nohighlight">\(a_i\)</span> podem ser números complexos.</p>
+<p>!!! example “Exemplo: exponencial de um operador”
+Vamos considerar um exemplo bastante importante na mecânica quântica, que é a exponencial de um operador. Usando a relação que aprendemos entre operadores e matrizes, usaremos a notação de matrizes, para simplificar.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$$
+\operatorname{exp}(H) = \operatorname{e}^H = \sum_{k=0}^{\infty} \frac{1}{k!} H^k = \mathbf{I} + H + \frac{1}{2} H^2 + \frac{1}{6} H^3 + \dots 
+$$
+
+onde $\mathbf{I}$ é matriz identidade, e $H^k$ é potência $k$ da matriz $H$. 
+</pre></div>
+</div>
+</section>
+<section id="generalizacao-para-espacos-continuos">
+<h2>Generalização para espaços contínuos<a class="headerlink" href="#generalizacao-para-espacos-continuos" title="Permalink to this heading">#</a></h2>
+<p>Para ajudar a fixar as ideias de espaços vetorias, aproveitando a analogia com os vetores do espaço euclidiano, que estamos acostumados na Física, até este ponto temos nos limitado à espaços discretos de dimensões finitas. Porém, o formalismo de espaços vetorias pode ser facilmente extendido também a espaços mais gerais, como espaços contínuos e infinitos.</p>
+<p>Neste caso, em geral, estamos falando do espaço das funções contínuas. Na verdade, mesmo sem perceber, já temos alguma familiaridade com esse tipo de espaço, mesmo na mecânica quântica, pois começamos a nossa discussão neste curso, falando da equação de Schrödinger e funções de ondas. Pois então, como seria de se esperar, as funçãos de ondas da mecânica quântica formam um espaço vetorial, com as mesmas propriedades dos espaços discretos que temos discutidos até agora.</p>
+<p>A seguir fazeremos uma breve introdução da notação usada para descrever espaços vetorias contínuos na mecânica quântica.</p>
+<p><strong>Vetores</strong></p>
+<p>Assim como os vetores de um espaço discreto e finito podem ser expandidos numa base ortonormal <span class="math notranslate nohighlight">\(\{ \ket{u_i},\ i=1,2,\dots  \}\)</span> com um número finito de componentes, os vetores de um espaço contínuo são representados numa base ortonomal <span class="math notranslate nohighlight">\(\{ \ket{w_{\alpha}},\ x_1 \le \alpha \le x_2  \}\)</span> por um número infinito de pontos no intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>. Isto é, os (infinitos) coeficientes da expansão são representados por uma função <span class="math notranslate nohighlight">\(c(\alpha)\)</span>, nesse intervalo. Neste caso a expansão é escrita como:</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\psi} = \int c(\alpha) \ket{w_{\alpha}} d \alpha 
+\]</div>
+<p><strong>Produto interno</strong></p>
+<p>Sendo o vetor <span class="math notranslate nohighlight">\(\ket{\phi}=\int b(\alpha) \ket{w_{\alpha}} d \alpha\)</span>. O produto interno dos vetores <span class="math notranslate nohighlight">\(\ket{\phi}\)</span> e <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, sendo os dois vetores expressos na base <span class="math notranslate nohighlight">\(\ket{w_{\alpha}}\)</span> é dado por:</p>
+<div class="math notranslate nohighlight">
+\[
+\bra{\phi}\psi\rangle = \int b(\alpha)^* c(\alpha) d\alpha
+\]</div>
+<p><strong>Bases ortonormal</strong></p>
+<p>No espaço discreto temos:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle u_i | u_j \rangle = \delta_{ij}
+\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\delta_{ij}\)</span> é o delta de Kronecker.</p>
+<p>No espaço contínuo temos:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle w_{\alpha} | w_{\alpha'} \rangle = \delta(\alpha-\alpha')
+\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\delta(\alpha-\alpha')\)</span> é a função delta de Dirac.</p>
+<p><strong>Relação de completeza</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\sum_i \ket{u_i} \bra{u_i} = \mathbf{\hat{1}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int \ket{w_{\alpha}} \bra{w_{\alpha}} d\alpha = \mathbf{\hat{1}}
+\]</div>
+<p><strong>Representação de operadores</strong></p>
+<p>Podemos também estender a representação de um operador para um espaço contínuo de maneira bastante similar e natural. Se imaginarmos uma representação matricial, o operador corresponderia a uma matriz “infinita”, com um número infito de linhas e colunas, e os elementos de matrizes são pontos:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{A} \Rightarrow\left(\begin{array}{ccc}
+\ddots &amp; \vdots &amp; \cdots \\
+\cdots &amp; A (\alpha, \alpha^{\prime} ) &amp; \cdots \\
+\cdots &amp; \cdots &amp; \ddots
+\end{array}\right).
+\end{split}\]</div>
+<p>Seguindo numa analogia geométrica, podemos imaginar um plano de pontos (elementos de matriz) cujos valores são dados por uma função de duas varíaveis <span class="math notranslate nohighlight">\(A(\alpha, \alpha^{\prime})\)</span>, determinador por:</p>
+<div class="math notranslate nohighlight">
+\[
+A(\alpha, \alpha^{\prime}) = \int \bra{w_{\alpha}} A \ket{w_{\alpha}} d \alpha
+\]</div>
+<section id="funcoes-de-ondas">
+<h3>Funções de ondas<a class="headerlink" href="#funcoes-de-ondas" title="Permalink to this heading">#</a></h3>
+<p>A generalização para espaços contínuos nos permite conectar as diferenes representações da mecânica quântica, assim como várias ideias já discutidas neste curso, mas que pareciam estar, literalmente, em “espaços” (contextos) diferentes. Por exemplo, nos permite conectar a mecânica ondulatória com a mecância matricial, assim como formulação em termos de funções de ondas <span class="math notranslate nohighlight">\(\psi(x)\)</span> com o vetor <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>.</p>
+<p>Na linguagem dos espaços vetoriais contínuos, a função contínua <span class="math notranslate nohighlight">\(x\)</span> é uma representação (coeficientes) do vetor <span class="math notranslate nohighlight">\(\ket{x}\)</span>, da mesma forma, o momento linear está relacionado a um vetor <span class="math notranslate nohighlight">\(\ket{p}\)</span>. Nesta descrição, as função de ondas <span class="math notranslate nohighlight">\(\psi(x)\)</span> e <span class="math notranslate nohighlight">\(\bar{\psi}(p)\)</span> são dadas por</p>
+<div class="math notranslate nohighlight">
+\[
+\psi(x) = \bra{x} \psi \rangle, \qquad \bar{\psi}(p) = \bra{p} \psi \rangle
+\]</div>
+<p>e correspondem, respectivamente, às representações do vetor <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> nas bases de posição e momento, definidas pelas funções</p>
+<div class="math notranslate nohighlight">
+\[
+\xi_{x_0}(x)=\delta(x-x_0), \qquad v_{p_0}=\frac{1}{\sqrt{2\pi}\hbar}e^{ip_0x/\hbar}.
+\]</div>
+<p>Observe que essas funções de base satisfazem as condições necessárias</p>
+<div class="math notranslate nohighlight">
+\[
+\bra{x}x'\rangle = \delta(x-x'), \qquad \mathbf{\hat{1}}=\int \ket{x} \bra{x} dx
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\bra{p}p'\rangle = \delta(p-p'), \qquad \mathbf{\hat{1}}=\int \ket{p} \bra{p} dp
+\]</div>
+<p>Além disso, o produto interno entre posição e momento é dado por</p>
+<div class="math notranslate nohighlight">
+\[
+\bra{x}p\rangle = \bra{p}x\rangle^* = \frac{1}{\sqrt{2\pi}\hbar}e^{i p_0 x /\hbar}.
+\]</div>
+<p>Finalmente, usando a relação de completeza podemos mostrar que as funções de ondas nos espaços da posição e momento estão relacionados através de uma transformada de Fourier:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\psi(x) &amp;=\langle x | \psi\rangle=\langle x|1| \psi\rangle=\left\langle x\left|\left(\int|p\rangle\langle p| d p\right)\right| \psi\right&gt;  \\
+&amp;=\int\langle x | p\rangle\langle p | \psi\rangle d p \\
+&amp;=\frac{1}{\sqrt{2 \pi} \hbar} \int e^{i \frac{p x}{\hbar}} \bar{\psi}(p) d p
+\end{aligned}
+\end{split}\]</div>
+</section>
+</section>
+<section id="produto-tensorial">
+<h2>Produto tensorial<a class="headerlink" href="#produto-tensorial" title="Permalink to this heading">#</a></h2>
+<p>Se um <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> é um espaço de dimensão <span class="math notranslate nohighlight">\(p\)</span> e <span class="math notranslate nohighlight">\(\mathcal{W}\)</span> é um espaço de dimensão <span class="math notranslate nohighlight">\(q\)</span>, então o espaço</p>
+<p>[
+V \otimes W
+]</p>
+<p>tem dimensão <span class="math notranslate nohighlight">\(p q\)</span>.</p>
+<p>Seja <span class="math notranslate nohighlight">\(|v\rangle \in V\)</span> e <span class="math notranslate nohighlight">\(|w\rangle \in W\)</span> dois vetores desses espaços. Então o vetor <span class="math notranslate nohighlight">\(|v\rangle \otimes|w\rangle \in V \otimes W\)</span>.</p>
+<p>Notações alternativas do vetor <span class="math notranslate nohighlight">\(|v\rangle \otimes|w\rangle\)</span> incluem <span class="math notranslate nohighlight">\(|v\rangle|w\rangle\)</span> e <span class="math notranslate nohighlight">\(|v w\rangle\)</span>.</p>
+<p>Se <span class="math notranslate nohighlight">\(A\)</span> é um operador que atua no espaço <span class="math notranslate nohighlight">\(V\)</span> e <span class="math notranslate nohighlight">\(B\)</span> é um operador que atua no espaço <span class="math notranslate nohighlight">\(W,\)</span> então o operador formado pelo produto tensorial dado por</p>
+<p>[
+A \otimes B
+]</p>
+<p>atua nos vetores <span class="math notranslate nohighlight">\(|v\rangle \otimes|w\rangle\)</span> da seguinte maneira:</p>
+<p>[
+(A \otimes B)|v\rangle|w\rangle=(A|v\rangle)(B|w\rangle)
+]</p>
+<p>Considerando agora a norma de um vetor que pertença a <span class="math notranslate nohighlight">\(V \otimes W .\)</span> Suponha que</p>
+<p>[
+|\psi\rangle=|v\rangle|w\rangle.
+]</p>
+<p>Neste caso, a norma  é dada por</p>
+<p>[
+\langle\psi | \psi\rangle=\langle v | v\rangle\langle w | w\rangle
+]</p>
+<section id="representacao-matricial-do-produto-tensorial">
+<h3>Representação matricial do produto tensorial<a class="headerlink" href="#representacao-matricial-do-produto-tensorial" title="Permalink to this heading">#</a></h3>
+<p>Seja <span class="math notranslate nohighlight">\(A\)</span> uma matriz <span class="math notranslate nohighlight">\((m \times n)\)</span> e <span class="math notranslate nohighlight">\(B\)</span> uma matriz <span class="math notranslate nohighlight">\((p \times q)\)</span>. O produto tensorial <span class="math notranslate nohighlight">\(A \otimes B\)</span> é a matriz com <span class="math notranslate nohighlight">\(m p\)</span> linhas e <span class="math notranslate nohighlight">\(n q\)</span> colunas. Os elementos desta matriz são construídos pelas submatrizes:</p>
+<p>[
+A_{i j} B
+]</p>
+<p>ou seja, multiplique <span class="math notranslate nohighlight">\(B\)</span> por cada componente de <span class="math notranslate nohighlight">\(A\)</span> e arrange essas submatrizes numa matriz maior. A matriz completa, representando o produto tensorial é dada por:</p>
+<p>[
+A=\left(\begin{array}{cccc}
+A_{11} B &amp; A_{12} B &amp; \dots &amp; A_{1 n} B \
+A_{21} B &amp; A_{22} B &amp; \dots &amp; \vdots \
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \
+A_{m 1} B &amp; \dots &amp; \dots &amp; A_{m n} B
+\end{array}\right)
+]</p>
+<p>Um vetor coluna em duas dimensões possui duas linhas e uma coluna. Como o produto tensorial entre uma matriz
+<span class="math notranslate nohighlight">\((m \times n)\)</span> e uma matriz <span class="math notranslate nohighlight">\((p \times q)\)</span> tem <span class="math notranslate nohighlight">\(m p\)</span> linhas e <span class="math notranslate nohighlight">\(n q\)</span> colunas, o produto tensorial entre as duas matrizes <span class="math notranslate nohighlight">\((2 \times 1)\)</span> terá <span class="math notranslate nohighlight">\((2 \times 2) = 4\)</span> linhas e <span class="math notranslate nohighlight">\((1 \times 1) = 1\)</span> coluna. A forma de calcular isso é:</p>
+<p>[
+\left(\begin{array}{l}
+a \
+b
+\end{array}\right) \otimes\left(\begin{array}{l}
+c \
+d
+\end{array}\right)=\left(\begin{array}{l}
+a c \
+a d \
+b c \
+b d
+\end{array}\right)
+]</p>
+<p>Agora considere o produto tensorial de duas matrizes <span class="math notranslate nohighlight">\(2 \times 2\)</span>.</p>
+<p>[
+A=\left(\begin{array}{ll}
+a &amp; b \
+c &amp; d
+\end{array}\right), \quad B=\left(\begin{array}{ll}
+w &amp; x \
+y &amp; z
+\end{array}\right)
+]</p>
+<p>Esse produto tensorial será uma matriz <span class="math notranslate nohighlight">\((4 \times 4)\)</span>:</p>
+<p>[
+A \otimes B=\left(\begin{array}{cc}
+a B &amp; b B \
+c B &amp; d B
+\end{array}\right)=\left(\begin{array}{cccc}
+a w &amp; a x &amp; b w &amp; b x \
+a y &amp; a z &amp; b y &amp; b z \
+c w &amp; c x &amp; d w &amp; d x \
+c y &amp; c z &amp; d y &amp; d z
+\end{array}\right)
+]</p>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="id3" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>!!! info “Como calcular a matriz inversa”
+Se <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> uma matriz não singular, sua inversa é dada por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \mathbf{A}^{-1}=\frac{1}{|\mathbf{A}|} \mathbf{C}^{\mathrm{T}}=\frac{1}{|\mathbf{A}|}\left(\begin{array}{cccc}
+    \mathbf{C}_{11} &amp; \mathbf{C}_{21} &amp; \cdots &amp; \mathbf{C}_{n 1} \\
+    \mathbf{C}_{12} &amp; \mathbf{C}_{22} &amp; \cdots &amp; \mathbf{C}_{n 2} \\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    \mathbf{C}_{1 n} &amp; \mathbf{C}_{2 n} &amp; \cdots &amp; \mathbf{C}_{n n}
+    \end{array}\right)  
+    \end{split}\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> é a matriz de cofatores <span class="math notranslate nohighlight">\(\mathbf{C_{ij}} = (-1)^{i+j}\ \mathbf{D_{ij}}\)</span>, sendo <span class="math notranslate nohighlight">\(\mathbf{D_{ij}}\)</span> o determinante da matriz menor <span class="math notranslate nohighlight">\(\mathbf{\tilde{A}_{ij}}\)</span>, obtida a partir da exclusão da linha <span class="math notranslate nohighlight">\(\mathbf{i}\)</span> e coluna <span class="math notranslate nohighlight">\(\mathbf{j}\)</span> da matriz <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>. O termo <span class="math notranslate nohighlight">\(|\mathbf{A}|=\operatorname{det}(\mathbf{A})\)</span> representa o determinante de  <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
+<p>Se <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> for uma matriz 3x3, sua inversa é dada por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \mathbf{A}^{-1}=\frac{1}{|\mathbf{A}|}
+    \left(\begin{array}{lll}
+    \left|\begin{array}{ll}
+    a_{22} &amp; a_{23} \\
+    a_{32} &amp; a_{33}
+    \end{array}\right| &amp; \left|\begin{array}{ll}
+    a_{13} &amp; a_{12} \\
+    a_{33} &amp; a_{32}
+    \end{array}\right| &amp; \left|\begin{array}{ll}
+    a_{12} &amp; a_{13} \\
+    a_{22} &amp; a_{23}
+    \end{array}\right| \\
+    \left|\begin{array}{ll}
+    a_{23} &amp; a_{21} \\
+    a_{33} &amp; a_{31}
+    \end{array}\right| &amp; \left|\begin{array}{ll}
+    a_{11} &amp; a_{13} \\
+    a_{31} &amp; a_{33}
+    \end{array}\right| &amp; \left|\begin{array}{ll}
+    a_{13} &amp; a_{11} \\
+    a_{23} &amp; a_{21}
+    \end{array}\right| \\
+    \left|\begin{array}{ll}
+    a_{21} &amp; a_{22} \\
+    a_{31} &amp; a_{32}
+    \end{array}\right| &amp; \left|\begin{array}{ll}
+    a_{12} &amp; a_{11} \\
+    a_{32} &amp; a_{31}
+    \end{array}\right| &amp; \left|\begin{array}{ll}
+    a_{11} &amp; a_{12} \\
+    a_{21} &amp; a_{22}
+    \end{array}\right|
+    \end{array} \right)
+    \end{split}\]</div>
+<p>Se <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> for uma matriz 2x2, sua inversa é simplesmente:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{A}^{-1}=\left(\begin{array}{ll}
+    a &amp; b \\
+    c &amp; d
+    \end{array}\right)^{-1}=\frac{1}{\operatorname{det}(\mathbf{A})}\left(\begin{array}{rr}
+    d &amp; -b \\
+    -c &amp; a
+    \end{array}\right)=\frac{1}{a d-b c}\left(\begin{array}{rr}
+    d &amp; -b \\
+    -c &amp; a
+    \end{array}\right)\end{split}\]</div>
+</aside>
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<hr>
+<p>!!! info “Séries de Taylor”</p>
+<p>Para uma função contínua <span class="math notranslate nohighlight">\(f(x)\)</span>, que seja infinitamente diferenciável, a série de Taylor é uma sua expansão em série de potencias do tipo:</p>
+<div class="math notranslate nohighlight">
+\[
+    f(x_0) = \sum_{k=1}^{\infty} \frac{1}{k!} \left(\frac{df}{dx}\right)^k_{x=x_0} (x-x_0)^k = \sum_{k=1}^{\infty} \frac{f^{('k)}(x_0)}{k!} (x-x_0)^k.
+    \]</div>
+</aside>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="RevMQ-p1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Estrutura matemática da MQ - parte 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="RevMQ-p3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fundamentos da Mecânica Quântica</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacoes-lineares-e-mudancas-de-base">Transformações lineares e mudanças de base</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forma-diagonal">Forma diagonal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mudanca-de-base">Mudança de base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacoes-de-similaridade">Transformações de similaridade</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonalizacao-de-operadores">Diagonalização de operadores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subespacos-e-projetores">Subespaços e projetores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-de-operadores">Funções de operadores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizacao-para-espacos-continuos">Generalização para espaços contínuos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-de-ondas">Funções de ondas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#produto-tensorial">Produto tensorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representacao-matricial-do-produto-tensorial">Representação matricial do produto tensorial</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Sérgio R. Muniz
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
