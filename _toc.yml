@@ -5,4 +5,6 @@ format: jb-book
 root: index
 chapters:
 - file: RevMQ-p1
+- file: RevMQ-p2
+- file: RevMQ-p3
 #- file: about
