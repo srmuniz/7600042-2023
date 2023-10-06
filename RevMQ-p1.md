@@ -7,7 +7,9 @@ $\newcommand{\braket}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}$
 Neste capitulo, é apresentada a estrutura matemática da teoria quântica. A prioridade maior é com relação à Física e não o rigor matemático, mas, ainda assim, serão introduzidos novos conceitos e representações que serão muito úteis para expandir os horizontes da teoria, como veremos nos próximos capítulos, isso será fundamentais para entender a linguagem contemporânea da descrição de sistemas de múltiplas partículas.
 
 ## Espaço de estados
-Resumindo o que vimos até aqui, podemos, ainda de uma maneira informal, dizer que as soluções estacionárias \(\psi_n(x)\) da EqS são funções de ondas que representam os possíveis estados do sistema, com energia \(E_n\). Outra forma de dizer isso, motivada pela forma da equação \(H\psi_n(x)=E_n\psi_n(x)\), é dizer que \(\{\psi_n(x)\}\) é o conjunto de autofunções do operador \(H\), representando os autoestados do sistema com autovalores \(E_n\). Vimos nos exemplos discutidos, como no caso da caixa infinita, que \(\psi_n(x)\) possui uma série de propriedades interessantes e úteis. Entre elas:
+Resumindo o o procedimento padrão em termos das funções de ondas, podemos dizer que as soluções estacionárias $\psi_n(x)$ da Equação de Schroedinger (EqS) são funções de ondas que representam os possíveis estados do sistema, com energia $E_n$. 
+Outra forma de dizer isso, motivada pela forma da equação $H\psi_n(x)=E_n\psi_n(x)$, é dizer que $\{\psi_n(x)\}$ é o conjunto de autofunções do operador $H$, representando os autoestados do sistema com autovalores $E_n$. 
+Vimos nos exemplos discutidos, como no caso da caixa infinita, que $\psi_n(x)$ possui uma série de propriedades interessantes e úteis. Entre elas:
 
 Dentro do que vimos até aqui, podemos, ainda de uma maneira informal, dizer que as soluções estacionárias $\psi_n(x)$ da EqS são funções de ondas que representam os possíveis estados do sistema, com energia $E_n$. Outra forma de dizer isso, observando a forma da equação $H\psi_n(x)=E_n\psi_n(x)$, é dizer que $\{\psi_n(x)\}$ é o conjunto de autofunções do operador $H$, representando os autoestados do sistema com autovalores $E_n$. Vimos nos exemplos discutidos, como no caso da caixa infinita, que $\psi_n(x)$ possui uma série de propriedades interessantes e úteis. Entre elas: 
 >$\int \psi^*_n(x)\psi_m(x)dx=\delta_{nm}$
@@ -21,7 +23,7 @@ Dentro do que vimos até aqui, podemos, ainda de uma maneira informal, dizer que
 
 De fato, pode-se extender e generalizar essas ideias para expressar
 esses objetos em termos mais abstratos e gerais, através do conceito de
-espaço vetorial linear. Como os estados \(\psi_n(x)\) e os operadores
+espaço vetorial linear. Como os estados $\psi_n(x)$ e os operadores
 (que nesse contexto serão transformações lineares) nesses estados devem 
 satisfazer um certas propriedades para representar um sistema físico, 
 esses espaços vetoriais devem ter conjunto de estruturas e propriedades 
@@ -68,16 +70,16 @@ Se o campo $\mathcal{F}$ é complexo (real) o espaço é dito ser um espaço vet
 Um conjunto de vetores $\{\phi_n \}$ é dito linearmente independente (LI) se não há nenhuma combinação linear não-trivial que leve ao vetor nulo, isto é:  $\sum_n c_n \phi_n = 0 \rightarrow c_n = 0\, \forall\, n$. A dimensão $d$ do espaço vetorial é dada pelo número máximo de vetores LI desse espaço. Qualquer vetor do espaço pode ser escrito como uma combinação linear dos vetores da base desse espaço, formado por vetores LI do espaço.
 
 ## Espaços de Hilbert: espaços vetoriais da MQ
-Na mecânica quântica são usados espaços vetoriais com algumas propriedades e estruturas adicionais, para garantir certas propriedades físicas desejáveis da teoria. É comum, principalmente entre os físicos, chamar esses estados de estados de Hilbert. Os espaços de Hilbert podem ser finitos (com dimensão \(d\)) ou infinitos, por exemplo, quando os vetores são funções contínuas. 
+Na mecânica quântica são usados espaços vetoriais com algumas propriedades e estruturas adicionais, para garantir certas propriedades físicas desejáveis da teoria. É comum, principalmente entre os físicos, chamar esses estados de estados de Hilbert. Os espaços de Hilbert podem ser finitos (com dimensão $d$) ou infinitos, por exemplo, quando os vetores são funções contínuas. 
 
 Embora essa terminologia não seja muito precisa, dado que os
-espaços vetoriais usados na MQ são apenas um tipo particular de espaço de Hilbert (neste contexto: os espaços cujos vetores são funções *quadrado-integráveis*, também chamados de espaços de Lebesgue do tipo \(L_2\)), nós usaremos essa "convenção", para simplificar a linguagem.
+espaços vetoriais usados na MQ são apenas um tipo particular de espaço de Hilbert (neste contexto: os espaços cujos vetores são funções *quadrado-integráveis*, também chamados de espaços de Lebesgue do tipo $L_2$), nós usaremos essa "convenção", para simplificar a linguagem.
 
 Uma das estruturas adicionais dos espaços de Hilbert é o produto interno que leva dois vetores do espaço num número complexo, segundo a definição:
 
 $$\forall\, \phi, \psi \in \mathcal{H} \rightarrow (\phi,\psi) = \int \phi^*(x)\psi(x)\,dx$$
 
-No caso de um espaço discreto de dimensão \(d\), o produto interno é definido como 
+No caso de um espaço discreto de dimensão $d$, o produto interno é definido como 
 
 $$(w,v)=\sum_{i=1}^{d} w_i^* v_i$$
 
@@ -101,21 +103,20 @@ $$||v|| = \sum_{i=1}^{d} v^*_i v_i$$
 
 Observe que a norma é sempre um número real, tal que $||\phi|| \ge 0$ e $||v|| \ge 0$ 
 
-!!! note "Normas dos vetores"
-
-    $$||\phi|| = \int \phi^*(x)\phi(x)\,dx$$ 
-
-    $$||v|| = \sum_{i=1}^{d} v^*_i v_i$$ 
-
+:::{admonition} Normas dos vetores
+:class: tip
+$$||\phi|| = \int \phi^*(x)\phi(x)\,dx$$ 
+$$||v|| = \sum_{i=1}^{d} v^*_i v_i$$ 
+:::
 
 No caso em que $\mathcal{H}$ é finito, com dimensão $d$, dado um vetor $\psi$ e uma base $\{ \phi_n \}$, temos que $\psi = \sum_n c_n \phi_n$ e onde $c_n=(\phi_n,\psi)$ e $(\phi_n,\phi_m)=\delta_{nm}$. 
 
 
 ## Espaços de Hilbert: espaços vetoriais da MQ
-Na mecânica quântica são usados espaços vetoriais com algumas propriedades e estruturas adicionais, para garantir certas propriedades físicas desejáveis da teoria. É comum, principalmente entre os físicos, chamar esses estados de estados de Hilbert. Os espaços de Hilbert podem ser finitos (com dimensão \(d\)) ou infinitos, por exemplo, quando os vetores são funções contínuas. 
+Na mecânica quântica são usados espaços vetoriais com algumas propriedades e estruturas adicionais, para garantir certas propriedades físicas desejáveis da teoria. É comum, principalmente entre os físicos, chamar esses estados de estados de Hilbert. Os espaços de Hilbert podem ser finitos (com dimensão $d$) ou infinitos, por exemplo, quando os vetores são funções contínuas. 
 
 Embora essa terminologia não seja muito precisa, dado que os
-espaços vetoriais usados na MQ são apenas um tipo particular de espaço de Hilbert (neste contexto: os espaços cujos vetores são funções *quadrado-integráveis*, também chamados de espaços de Lebesgue do tipo \(L_2\)), nós usaremos essa "convenção", para simplificar a linguagem.
+espaços vetoriais usados na MQ são apenas um tipo particular de espaço de Hilbert (neste contexto: os espaços cujos vetores são funções *quadrado-integráveis*, também chamados de espaços de Lebesgue do tipo $L_2$), nós usaremos essa "convenção", para simplificar a linguagem.
 
 
 ### Produto interno
@@ -123,7 +124,7 @@ Uma das estruturas adicionais dos espaços de Hilbert é o produto interno que l
 
 $$\forall\, \phi, \psi \in \mathcal{H} \rightarrow (\phi,\psi) = \int \phi^*(x)\psi(x)\,dx$$
 
-No caso de um espaço discreto de dimensão \(d\), o produto interno é definido como 
+No caso de um espaço discreto de dimensão $d$, o produto interno é definido como 
 
 $$(w,v)=\sum_{i=1}^{d} w_i^* v_i$$
 
@@ -172,9 +173,15 @@ $$\Psi_a + \Psi_b = \sum_n (a_i + b_n) \psi_n.$$
 $$\lambda \Psi_a= \sum_n \lambda a_i \psi_n.$$
 
 
-!!! info "Pare, Pense & Contemple!"
-    Antes de prosseguir, pare e reflita por um momento no significado e amplitude esses resultados. Lembre-se que o espaço $\mathcal{H}$ pode ter dimensões infinitas, tanto no número de elemento (vetores), como nas dimensões (número de componentes) desses vetores. Esses resultados, nada óbvios, são extremamente poderosos e úteis, justificando plenamente o tempo investido em generalizar e abstrair a descrição dos nossos problemas usando esse formalismo.  
+```{tip}
+**Pare, Pense & Contemple!**
 
+Antes de prosseguir, pare e reflita por um momento no significado e amplitude esses  resultados. 
+Lembre-se que o espaço $\mathcal{H}$ pode ter dimensões infinitas, tanto no número de elemento 
+(vetores), como nas dimensões (número de componentes) desses vetores. Esses resultados, nada óbvios, 
+são extremamente poderosos e úteis, justificando plenamente o tempo investido em generalizar 
+e abstrair a descrição dos nossos problemas usando esse formalismo.  
+```
 
 ## Notação de Dirac
 Introduzimos agora a notação de Dirac, bastante popular na mecânica quântica, onde o vetor de estado é chamado de "*ket*" e representado pelo símbolo $|\psi\rangle$. O vetor correspondente do *espaço dual* é chamado de "*bra*" é representado por $\langle\psi|$, de tal forma que o produto interno pode ser representado por $(\psi,\psi)=\langle\psi|\psi\rangle$. 
@@ -233,10 +240,12 @@ $$ \delta_{jk} = \left\{ \begin{array}{c} 1 & \textrm{ se }j=k \\ 0 & \textrm{ c
 ## Vetores de base
 O conjunto de vetore $\{ |\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle \}$ formam uma base do espaço se eles satisfazem os seguinte critérios:
 
-!!! note ""
-    1. É possível escrever qualquer vetor do espaço como uma combinação linear única dos vetores $\{ \phi_i \}$. 
-    2. O conjunto $\{ |\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle \}$ é linearmente indenpendente.
-    3. Satisfaz a relação de completeza.
+:::{admonition} Critérios
+:class: tip
+1. É possível escrever qualquer vetor do espaço como uma combinação linear única dos vetores $\{\phi_i\}$. 
+2. O conjunto $\{|\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle\}$ é linearmente indenpendente.
+3. Satisfaz a relação de completeza.
+:::
 
 **Condição 1:**
 Se o conjunto $\{ |\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle \}$ estende todo o espaço $\mathcal{H}$, é possível escrever um vetor $|\Psi\rangle$ arbitrário como uma combinção linear dos vetores da base
@@ -255,7 +264,7 @@ $$ a_1 |\phi_1\rangle + a_2 |\phi_2\rangle + \dots + a_n |\phi_n\rangle = 0$$
 implica que todos os coeficientes são nulos, $c_1=c_2=...=c_n=0$. Em outras palavras, não há nenhuma combinação (não trivial) que produza o vetor nulo.
 
 > **Dimensão do espaço**
-> O número de elmentos (vetores) da base fornece a dimensão do espaço vetorial.
+> O número de elementos (vetores) da base fornece a dimensão do espaço vetorial.
 
 **Condição 3:**
 Um conjunto ortonormal $\{ |\phi_1\rangle, |\phi_2\rangle, \dots,|\phi_n\rangle \}$ constitue uma base se e somente se satisfaz a **relação de completeza**
@@ -293,19 +302,26 @@ podemos também escrever $|\alpha \psi\rangle = \alpha |\psi\rangle$. O mesmo po
 
 $$ \langle \alpha \psi| = \alpha^* \langle \psi|$$
 
-!!! example
-  Suponha que $\{ |u_1 \rangle, |u_2 \rangle, |u_3 \rangle \}$ seja uma base ortonormal. Nesta base temos:
 
-  $$ | \psi \rangle = 2i |u_1 \rangle - 3|u_2 \rangle + i|u_3 \rangle $$
+```{note} 
+Suponha que $\{ |u_1 \rangle, |u_2 \rangle, |u_3 \rangle \}$ seja uma base ortonormal. Nesta base temos:
 
-  $$ | \phi\rangle = 3 |u_1 \rangle - 2|u_2 \rangle + 4|u_3 \rangle $$
+$$ | \psi \rangle = 2i |u_1 \rangle - 3|u_2 \rangle + i|u_3 \rangle $$
 
-  > a) Ache $\langle\psi|$ e $\langle \phi|$. 
-  >
-  > b) Calcule o produto interno $\langle \phi|\psi\rangle$ e mostre que igual seu conjugado.
-  >
-  > c) Sendo $a = 3 + 3i$, calcule $|a\psi\rangle$.
-  >
-  > d) Ache as expressões de $|\psi+\phi\rangle$ e  $|\psi-\phi\rangle$
-  >
-  > e) Calcule $\langle a \psi |$ e compare com $a^* \langle \psi|$. 
+$$ | \phi\rangle = 3 |u_1 \rangle - 2|u_2 \rangle + 4|u_3 \rangle $$
+
+> RESOLVA:
+> -----
+> a) Ache $\langle \psi|$ e $\langle \phi|$.
+>
+> b) Calcule o produto interno $\langle \phi|\psi\rangle$ e mostre que igual seu conjugado.
+>
+> c) Sendo $a = 3 + 3i$, calcule $|a\psi\rangle$.
+>
+> d) Ache as expressões de $|\psi+\phi\rangle$ e  $|\psi-\phi\rangle$
+>
+> e) Calcule $\langle a \psi|$ e compare com $a^* \langle \psi|$.
+>
+> -----
+> 
+```
